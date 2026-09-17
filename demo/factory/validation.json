@@ -1,0 +1,157 @@
+{
+  "model": "mlx-community/Qwen3.5-0.8B-4bit",
+  "scope": "One fixed browser-rendered 12-object run, not a general accuracy benchmark. Ground truth is used only for scoring after model choice.",
+  "count": 12,
+  "correct": 12,
+  "model_latency_ms": {
+    "min": 175.60870799934492,
+    "median": 188.6448329896666,
+    "max": 250.8783339872025
+  },
+  "samples": [
+    {
+      "shape": "box",
+      "expected": "red",
+      "choice": "red",
+      "probabilities": {
+        "red": 0.9976639721459515,
+        "blue": 0.0006199408153951144,
+        "yellow": 0.0017160870386532707
+      },
+      "model_ms": 250.8783339872025,
+      "image_data_url_sha256": "c4a0a1c0bb300008e22cca0335c552f006b41450d1b956faad806a149da482b7"
+    },
+    {
+      "shape": "box",
+      "expected": "blue",
+      "choice": "blue",
+      "probabilities": {
+        "red": 0.11643844436467318,
+        "blue": 0.8814673780181416,
+        "yellow": 0.002094177617185233
+      },
+      "model_ms": 186.5523750311695,
+      "image_data_url_sha256": "f474d5a8570cf60c217f26c4b04d76ef2f536a49dcddf3da96a85b1e05e9f110"
+    },
+    {
+      "shape": "box",
+      "expected": "yellow",
+      "choice": "yellow",
+      "probabilities": {
+        "red": 0.46471969816150144,
+        "blue": 0.0012016682583417947,
+        "yellow": 0.5340786335801568
+      },
+      "model_ms": 191.29466701997444,
+      "image_data_url_sha256": "f995e4bda7f03208ade221a04faa27ffd14f75b7061bd42a1ee90e6b807968a7"
+    },
+    {
+      "shape": "ball",
+      "expected": "red",
+      "choice": "red",
+      "probabilities": {
+        "red": 0.9981552754138776,
+        "blue": 0.00044514700582285664,
+        "yellow": 0.0013995775802996414
+      },
+      "model_ms": 191.33474997943267,
+      "image_data_url_sha256": "1cf935b5bb4492f6ac1f953585a1ffc27de7891638b0249bba4839cd50c1cb28"
+    },
+    {
+      "shape": "ball",
+      "expected": "blue",
+      "choice": "blue",
+      "probabilities": {
+        "red": 0.10056063980484187,
+        "blue": 0.8982296471298756,
+        "yellow": 0.0012097130652826405
+      },
+      "model_ms": 189.09395800437778,
+      "image_data_url_sha256": "bed69ae4625324b6cf5331a4484121239067be41f3a13099228432a5d9f23974"
+    },
+    {
+      "shape": "ball",
+      "expected": "yellow",
+      "choice": "yellow",
+      "probabilities": {
+        "red": 0.4672285112886521,
+        "blue": 0.0010927575934877405,
+        "yellow": 0.5316787311178601
+      },
+      "model_ms": 183.34191699977964,
+      "image_data_url_sha256": "ce2e43acac0fecf803e1c4947105c4354714b76a82f15393450c9d7958697320"
+    },
+    {
+      "shape": "bottle",
+      "expected": "red",
+      "choice": "red",
+      "probabilities": {
+        "red": 0.997912668013327,
+        "blue": 0.0006249546492138097,
+        "yellow": 0.001462377337459082
+      },
+      "model_ms": 185.49837497994304,
+      "image_data_url_sha256": "5aac03db6b3826941911bf67774cda16a8fc06e29c43abb822be82af3b570222"
+    },
+    {
+      "shape": "bottle",
+      "expected": "blue",
+      "choice": "blue",
+      "probabilities": {
+        "red": 0.10518102101293361,
+        "blue": 0.8929207235833756,
+        "yellow": 0.0018982554036906668
+      },
+      "model_ms": 189.46750002214685,
+      "image_data_url_sha256": "6c0d8b538d1983a075d06bf4c17ba0fe0b6ed4af5bf51119480961c1fd4e90df"
+    },
+    {
+      "shape": "bottle",
+      "expected": "yellow",
+      "choice": "yellow",
+      "probabilities": {
+        "red": 0.49479612123007577,
+        "blue": 0.0012816158075667316,
+        "yellow": 0.5039222629623575
+      },
+      "model_ms": 175.60870799934492,
+      "image_data_url_sha256": "81166afed77da6cc445faa5132da78dc5a295dcc1be7d91257389291ebe2ea25"
+    },
+    {
+      "shape": "pyramid",
+      "expected": "red",
+      "choice": "red",
+      "probabilities": {
+        "red": 0.9976374326489665,
+        "blue": 0.000650903037768879,
+        "yellow": 0.0017116643132646552
+      },
+      "model_ms": 215.76416603056714,
+      "image_data_url_sha256": "62391150a5df83d3da44863c27312e27516568b342977a8f566db7a5047d9174"
+    },
+    {
+      "shape": "pyramid",
+      "expected": "blue",
+      "choice": "blue",
+      "probabilities": {
+        "red": 0.1057200536774072,
+        "blue": 0.8926380766387247,
+        "yellow": 0.0016418696838680423
+      },
+      "model_ms": 186.94174999836832,
+      "image_data_url_sha256": "76450880977b56e85fa53e681a2cf6d3fb6f1e80109515cf3166def5bf1de142"
+    },
+    {
+      "shape": "pyramid",
+      "expected": "yellow",
+      "choice": "yellow",
+      "probabilities": {
+        "red": 0.442791372933782,
+        "blue": 0.0014105355039302082,
+        "yellow": 0.5557980915622878
+      },
+      "model_ms": 188.19570797495544,
+      "image_data_url_sha256": "520fea6f949b7c5b7c49a1939d2af8e40529398dc1ce090ab27e123ba2915772"
+    }
+  ]
+}

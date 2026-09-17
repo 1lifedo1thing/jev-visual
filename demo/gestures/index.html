@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gesture Particle Console · Jev Visual</title>
+    <link rel="stylesheet" href="../shared.css" />
+    <link rel="stylesheet" href="../live.css" />
+    <style>
+      body {
+        --paper: #101319;
+        --ink: #e9e9ef;
+        --muted: #939bad;
+        --line: #303643;
+        --accent: #9eafff;
+        --panel: #181d27;
+        background: var(--paper);
+      }
+      .header {
+        border-color: #303643;
+      }
+      .console {
+        position: relative;
+      }
+      .console canvas {
+        background: #111621;
+      }
+      .console .badge {
+        position: absolute;
+        top: 18px;
+        left: 18px;
+        font: 12px monospace;
+        color: #b5c8ff;
+        letter-spacing: 2px;
+      }
+      .console .caption {
+        position: absolute;
+        bottom: 18px;
+        left: 20px;
+        font: 12px monospace;
+        color: #a9b4cb;
+      }
+      .camera-box {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+        margin: 16px 0;
+      }
+      .video-wrap {
+        position: relative;
+        width: 180px;
+        flex-shrink: 0;
+        aspect-ratio: 4/3;
+        background: #1c2330;
+        border: 1px solid var(--line);
+        overflow: hidden;
+        border-radius: 7px;
+      }
+      .video-wrap video {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        transform: scaleX(-1);
+      }
+      .video-wrap:after {
+        content: "";
+        position: absolute;
+        inset: 0 12.5%;
+        border: 1px solid #91e3d6;
+        pointer-events: none;
+      }
+      .camera-box p {
+        font-size: 12px;
+        color: var(--muted);
+      }
+      .gesture-legend {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        margin: 15px 0;
+      }
+      .gesture-legend div {
+        padding: 12px;
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        font-size: 13px;
+      }
+      .gesture-legend span {
+        display: block;
+        color: var(--muted);
+        font-size: 11px;
+      }
+      button:hover:not(:disabled) {
+        background: #293348;
+        border-color: #9eafff;
+      }
+      button.primary {
+        background: #a8b7ff;
+        color: #121728;
+        border-color: #a8b7ff;
+      }
+      .status {
+        background: #1d2533;
+        border-color: #9eafff;
+      }
+      pre {
+        background: #111721;
+      }
+      .live-track {
+        background: #333b4b;
+      }
+      .note strong {
+        color: #d4dcf1;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="shell">
+      <header class="header">
+        <a class="eyebrow" href="../">JEV VISUAL / GESTURE FIELD</a>
+        <h1>Shape particles with your hands.</h1>
+        <p class="subtitle">
+          Local vision meets a live particle field. Animation runs continuously; recognition updates the effect asynchronously.
+        </p>
+      </header>
+      <div class="live-layout">
+        <section>
+          <div class="console">
+            <canvas
+              id="particles"
+              class="live-stage"
+              width="960"
+              height="570"
+              aria-label="Particle field controlled by recognized gestures"
+            ></canvas
+            ><span id="mode" class="badge">IDLE / CAMERA OFF</span
+            ><span class="caption"
+              >1,000 PARTICLES · LOCAL VISION · NO CLOUD</span
+            >
+          </div>
+          <div class="gesture-legend">
+            <div>Open palm<span>PALM → Starburst</span></div>
+            <div>Fist<span>FIST → Gravity core</span></div>
+            <div>V sign<span>VICTORY → Spiral ring</span></div>
+          </div>
+          <div class="camera-box">
+            <div class="video-wrap">
+              <video id="camera" autoplay muted playsinline></video>
+            </div>
+            <p>
+              Keep one hand inside the center frame for about a second. The preview is mirrored; the model receives an unmirrored square crop. Use a simple background and good lighting.
+            </p>
+          </div>
+          <div class="live-controls">
+            <button id="camera-on" class="primary">Enable camera</button
+            ><button id="ai-on" disabled>Start recognition</button
+            ><button id="camera-off" disabled>Close camera & recognition</button>
+          </div>
+          <div class="live-metrics">
+            <span>Prediction<strong id="prediction">—</strong></span
+            ><span>Round trip / model<strong id="latency">—</strong></span
+            ><span>Samples<strong id="samples">0</strong></span>
+          </div>
+          <p id="status" class="status" aria-live="polite">
+            Enable the camera to request browser permission. The camera has not been accessed.
+          </p>
+          <p class="note">
+            Video only; no audio. Frames are sent only after you start recognition, to
+            <strong>local /v1/judge</strong
+            >. No cloud upload or disk storage. The page retains up to 12 frames and clears them when the camera closes. Effects use smoothed probabilities and two consecutive confirmations. This is not hand landmark tracking; recognition may fail.
+          </p>
+        </section>
+        <aside class="live-aside">
+          <h2>Visual feedback feed</h2>
+          <p>
+            Actual input frames and raw candidate probabilities appear below. Particle effects use stabilized predictions; probabilities are not accuracy scores. Responses older than 2.5 seconds are ignored for control.
+          </p>
+          <div id="feed"></div>
+        </aside>
+      </div>
+    </main>
+    <script type="module" src="gestures.js"></script>
+  </body>
+</html>

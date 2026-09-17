@@ -1,0 +1,31 @@
+{
+  "source": "cubejs@1.3.2; https://github.com/ldez/cubejs; corner facelets [0,2,6,8] from each 3x3 face; no solver used",
+  "faceOrder": [
+    "U",
+    "D",
+    "R",
+    "L",
+    "F",
+    "B"
+  ],
+  "singles": {
+    "U": "UUUU/DDDD/BBRR/FFLL/RRFF/LLBB",
+    "U'": "UUUU/DDDD/FFRR/BBLL/LLFF/RRBB",
+    "D": "UUUU/DDDD/RRFF/LLBB/FFLL/BBRR",
+    "D'": "UUUU/DDDD/RRBB/LLFF/FFRR/BBLL",
+    "R": "UFUF/DBDB/RRRR/LLLL/FDFD/UBUB",
+    "R'": "UBUB/DFDF/RRRR/LLLL/FUFU/DBDB",
+    "L": "BUBU/FDFD/RRRR/LLLL/UFUF/BDBD",
+    "L'": "FUFU/BDBD/RRRR/LLLL/DFDF/BUBU",
+    "F": "UULL/RRDD/URUR/LDLD/FFFF/BBBB",
+    "F'": "UURR/LLDD/DRDR/LULU/FFFF/BBBB",
+    "B": "RRUU/DDLL/RDRD/ULUL/FFFF/BBBB",
+    "B'": "LLUU/DDRR/RURU/DLDL/FFFF/BBBB"
+  },
+  "sequence": {
+    "seed": 17,
+    "length": 2000,
+    "generator": "state = (imul(state,1664525)+1013904223) >>> 0; moveIndex = (state >>> 8) % 12",
+    "sha256": "d70acaf648690217978540ece8c40fee8219639472c56b55644f52e87a15b765"
+  }
+}

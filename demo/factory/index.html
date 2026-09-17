@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI Sorting Factory · Jev Visual</title>
+    <link rel="stylesheet" href="../shared.css" />
+    <link rel="stylesheet" href="../live.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="header">
+        <a class="eyebrow" href="../">JEV VISUAL / FACTORY 01</a>
+        <h1>AI Sorting Factory</h1>
+        <p class="subtitle">
+          You choose the objects; AI sorts them by sight. The belt keeps moving while inference runs.
+        </p>
+      </header>
+      <div class="live-layout">
+        <section>
+          <canvas
+            id="factory"
+            class="live-stage"
+            width="960"
+            height="540"
+            aria-label="Moving conveyor belt with three color sorting bins"
+          ></canvas>
+          <div class="live-metrics">
+            <span>Sorted<strong id="count">0</strong></span
+            ><span>Correct / sorted<strong id="accuracy">—</strong></span
+            ><span>Round trip / model<strong id="latency">—</strong></span
+            ><span>Queue<strong id="queue">0 / 12</strong></span>
+          </div>
+          <div class="live-controls">
+            <label
+              >Object
+              <select id="shape">
+                <option value="box">Box</option>
+                <option value="ball">Ball</option>
+                <option value="bottle">Bottle</option>
+                <option value="pyramid">Pyramid</option>
+              </select></label
+            ><label
+              >Color
+              <select id="color">
+                <option value="red">Red</option>
+                <option value="blue">Blue</option>
+                <option value="yellow">Yellow</option>
+              </select></label
+            ><button id="add" class="primary">Add object</button
+            ><button id="mix">Add 6 mixed objects</button>
+          </div>
+          <div class="live-controls">
+            <button id="ai" class="primary">Start AI sorting</button
+            ><button id="stop">Stop AI</button
+            ><button id="reset">Clear factory</button>
+          </div>
+          <p id="status" class="status" aria-live="polite">
+            Add objects, then start AI. The belt keeps moving; unclassified objects wait at the gate.
+          </p>
+          <p class="note">
+            The model sees only a screenshot of the scan area and selects a red, blue or yellow lane. Color metadata is used only for evaluation. Objects wait at the gate if inference is slow; animation continues. Queue limit: 12.
+          </p>
+        </section>
+        <aside class="live-aside">
+          <h2>Visual decision feed</h2>
+          <p>
+            Each thumbnail is the actual input. Round-trip time includes waiting and network overhead; model time comes from the API. Candidate probabilities are not accuracy scores.
+          </p>
+          <div id="feed"></div>
+        </aside>
+      </div>
+    </main>
+    <script type="module" src="factory.js"></script>
+  </body>
+</html>

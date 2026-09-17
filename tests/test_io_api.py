@@ -41,3 +41,19 @@ def test_api_validation_and_data_url_policy():
     assert client.post("/v1/judge", json={"image": "/etc/passwd", "questions": questions}).status_code == 422
     assert client.post("/v1/judge", json={"image": image_url(), "questions": {}}).status_code == 422
     app.state.executor.shutdown()
+
+
+def test_demo_pages_and_static_modules():
+    client = TestClient(app)
+    for path, expected in [
+        ('/demo/', 'Visual inference demos'),
+        ('/demo/rubik/', 'game.js'),
+        ('/demo/factory/', 'factory.js'),
+        ('/demo/gestures/', 'gestures.js'),
+        ('/demo/shared.js', 'mountDemo'),
+    ]:
+        response = client.get(path)
+        assert response.status_code == 200
+        assert expected in response.text
+
+    assert client.get("/demo/snake/").status_code == 404

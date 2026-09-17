@@ -1,0 +1,2252 @@
+{
+  "description": "Development observations, not a success-rate benchmark. Images and full responses remain in ignored local artifacts; hashes are SHA256 of the exact data URL string. Initial and follow-up episodes used different prompt/UI versions. Rubik reset uses a random one-turn scramble. Historical UI status messages have been translated to English; model choices, probabilities and image hashes are unchanged.",
+  "runs": [
+    {
+      "trial": "rubik-initial",
+      "source_artifact": "artifacts/rubik-model-run.json",
+      "model": "mlx-community/Qwen3.5-0.8B-4bit",
+      "fixed_questions": {
+        "action": {
+          "type": "choice",
+          "scoring": "label",
+          "instructions": "You control a real 2x2 Rubik's cube. The screenshot is a six-face unfolded net: U above F; L, F, R, B across the middle; D below F. Each sticker contains its color initial (W white, Y yellow, O orange, R red, G green, B blue). Face names identify positions, not current sticker colors. Goal: make all four stickers on EACH of the six faces the same color. Select the single face turn most likely to restore all six solid-color faces. Moves without a prime turn 90 degrees clockwise when viewing that face directly from outside. Prime moves turn counterclockwise. Each action rotates a full cube layer, including adjacent stickers. Infer the move only from the screenshot; no hidden state or scramble history is supplied.",
+          "criteria": {
+            "U": "Turn the U face 90 degrees clockwise, viewed directly from outside that face.",
+            "U'": "Turn the U face 90 degrees counterclockwise, viewed directly from outside that face.",
+            "R": "Turn the R face 90 degrees clockwise, viewed directly from outside that face.",
+            "R'": "Turn the R face 90 degrees counterclockwise, viewed directly from outside that face.",
+            "F": "Turn the F face 90 degrees clockwise, viewed directly from outside that face.",
+            "F'": "Turn the F face 90 degrees counterclockwise, viewed directly from outside that face.",
+            "D": "Turn the D face 90 degrees clockwise, viewed directly from outside that face.",
+            "D'": "Turn the D face 90 degrees counterclockwise, viewed directly from outside that face.",
+            "L": "Turn the L face 90 degrees clockwise, viewed directly from outside that face.",
+            "L'": "Turn the L face 90 degrees counterclockwise, viewed directly from outside that face.",
+            "B": "Turn the B face 90 degrees clockwise, viewed directly from outside that face.",
+            "B'": "Turn the B face 90 degrees counterclockwise, viewed directly from outside that face."
+          }
+        }
+      },
+      "status": "Step budget reached. Paused without solving the game.",
+      "won": false,
+      "steps": [
+        {
+          "step": 1,
+          "image_sha256": "3e286ccdaab0f8a5de5ec1afc74094a92daf2a9680805e83940eb0db33a54a5a",
+          "action": "U'",
+          "executed": true,
+          "probabilities": {
+            "U": 0.268614407125969,
+            "U'": 0.28579405759820353,
+            "R": 0.018568892812032247,
+            "R'": 0.13178076863847227,
+            "F": 0.0727061872229873,
+            "F'": 0.011367857897188667,
+            "D": 0.02557665670971858,
+            "D'": 0.011726341383682124,
+            "L": 0.042765818699413836,
+            "L'": 0.09835476845106167,
+            "B": 0.02845445365330096,
+            "B'": 0.004289789807969785
+          },
+          "elapsed_ms": 723.4479589969851,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "1 moves · Last: U' · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 2,
+          "image_sha256": "8ac05f4318c29e40543b4d60acb6e6f09bd18787a832f48d6dd30f753ed0deef",
+          "action": "U'",
+          "executed": true,
+          "probabilities": {
+            "U": 0.25359490167878573,
+            "U'": 0.296794795278562,
+            "R": 0.017749395939130407,
+            "R'": 0.1429367852006094,
+            "F": 0.06313608078268929,
+            "F'": 0.010686757204185349,
+            "D": 0.02767797239678704,
+            "D'": 0.012362947294458356,
+            "L": 0.040825342547798564,
+            "L'": 0.0982938364867642,
+            "B": 0.0307902346718413,
+            "B'": 0.005150950518388363
+          },
+          "elapsed_ms": 729.5951659907587,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "2 moves · Last: U' · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 3,
+          "image_sha256": "0bd9301e2644dd6135c15ee23e8820901bfe7e34a114ef0905a244f1cc3544e1",
+          "action": "U'",
+          "executed": true,
+          "probabilities": {
+            "U": 0.2784188206231445,
+            "U'": 0.297047618964378,
+            "R": 0.018884871430687636,
+            "R'": 0.11987670037964636,
+            "F": 0.06342423584125284,
+            "F'": 0.008101224690761532,
+            "D": 0.028953391589900384,
+            "D'": 0.0129588135726719,
+            "L": 0.04341455913063511,
+            "L'": 0.09742041021846076,
+            "B": 0.026831728694051416,
+            "B'": 0.004667624864409831
+          },
+          "elapsed_ms": 736.6510829888284,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "3 moves · Last: U' · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 4,
+          "image_sha256": "2c56fccdffff9b48f9ef93e515beec755beedd9c2dc486612dc73151786cd878",
+          "action": "U'",
+          "executed": true,
+          "probabilities": {
+            "U": 0.2827150601495651,
+            "U'": 0.2919164800333617,
+            "R": 0.01904803796832691,
+            "R'": 0.1320099354635879,
+            "F": 0.05801154723536502,
+            "F'": 0.008244934007421377,
+            "D": 0.027535452294788945,
+            "D'": 0.01232346249778199,
+            "L": 0.04577673916812749,
+            "L'": 0.09404644429337171,
+            "B": 0.024116458803131666,
+            "B'": 0.00425544808517018
+          },
+          "elapsed_ms": 721.1944579612464,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "4 moves · Last: U' · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 5,
+          "image_sha256": "3e286ccdaab0f8a5de5ec1afc74094a92daf2a9680805e83940eb0db33a54a5a",
+          "action": "U'",
+          "executed": true,
+          "probabilities": {
+            "U": 0.268614407125969,
+            "U'": 0.28579405759820353,
+            "R": 0.018568892812032247,
+            "R'": 0.13178076863847227,
+            "F": 0.0727061872229873,
+            "F'": 0.011367857897188667,
+            "D": 0.02557665670971858,
+            "D'": 0.011726341383682124,
+            "L": 0.042765818699413836,
+            "L'": 0.09835476845106167,
+            "B": 0.02845445365330096,
+            "B'": 0.004289789807969785
+          },
+          "elapsed_ms": 724.9629579600878,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "5 moves · Last: U' · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 6,
+          "image_sha256": "8ac05f4318c29e40543b4d60acb6e6f09bd18787a832f48d6dd30f753ed0deef",
+          "action": "U'",
+          "executed": true,
+          "probabilities": {
+            "U": 0.25359490167878573,
+            "U'": 0.296794795278562,
+            "R": 0.017749395939130407,
+            "R'": 0.1429367852006094,
+            "F": 0.06313608078268929,
+            "F'": 0.010686757204185349,
+            "D": 0.02767797239678704,
+            "D'": 0.012362947294458356,
+            "L": 0.040825342547798564,
+            "L'": 0.0982938364867642,
+            "B": 0.0307902346718413,
+            "B'": 0.005150950518388363
+          },
+          "elapsed_ms": 724.3530830019154,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "6 moves · Last: U' · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 7,
+          "image_sha256": "0bd9301e2644dd6135c15ee23e8820901bfe7e34a114ef0905a244f1cc3544e1",
+          "action": "U'",
+          "executed": true,
+          "probabilities": {
+            "U": 0.2784188206231445,
+            "U'": 0.297047618964378,
+            "R": 0.018884871430687636,
+            "R'": 0.11987670037964636,
+            "F": 0.06342423584125284,
+            "F'": 0.008101224690761532,
+            "D": 0.028953391589900384,
+            "D'": 0.0129588135726719,
+            "L": 0.04341455913063511,
+            "L'": 0.09742041021846076,
+            "B": 0.026831728694051416,
+            "B'": 0.004667624864409831
+          },
+          "elapsed_ms": 719.7472500265576,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "7 moves · Last: U' · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 8,
+          "image_sha256": "2c56fccdffff9b48f9ef93e515beec755beedd9c2dc486612dc73151786cd878",
+          "action": "U'",
+          "executed": true,
+          "probabilities": {
+            "U": 0.2827150601495651,
+            "U'": 0.2919164800333617,
+            "R": 0.01904803796832691,
+            "R'": 0.1320099354635879,
+            "F": 0.05801154723536502,
+            "F'": 0.008244934007421377,
+            "D": 0.027535452294788945,
+            "D'": 0.01232346249778199,
+            "L": 0.04577673916812749,
+            "L'": 0.09404644429337171,
+            "B": 0.024116458803131666,
+            "B'": 0.00425544808517018
+          },
+          "elapsed_ms": 731.9639580091462,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "8 moves · Last: U' · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 9,
+          "image_sha256": "3e286ccdaab0f8a5de5ec1afc74094a92daf2a9680805e83940eb0db33a54a5a",
+          "action": "U'",
+          "executed": true,
+          "probabilities": {
+            "U": 0.268614407125969,
+            "U'": 0.28579405759820353,
+            "R": 0.018568892812032247,
+            "R'": 0.13178076863847227,
+            "F": 0.0727061872229873,
+            "F'": 0.011367857897188667,
+            "D": 0.02557665670971858,
+            "D'": 0.011726341383682124,
+            "L": 0.042765818699413836,
+            "L'": 0.09835476845106167,
+            "B": 0.02845445365330096,
+            "B'": 0.004289789807969785
+          },
+          "elapsed_ms": 735.7897500041872,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "9 moves · Last: U' · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 10,
+          "image_sha256": "8ac05f4318c29e40543b4d60acb6e6f09bd18787a832f48d6dd30f753ed0deef",
+          "action": "U'",
+          "executed": true,
+          "probabilities": {
+            "U": 0.25359490167878573,
+            "U'": 0.296794795278562,
+            "R": 0.017749395939130407,
+            "R'": 0.1429367852006094,
+            "F": 0.06313608078268929,
+            "F'": 0.010686757204185349,
+            "D": 0.02767797239678704,
+            "D'": 0.012362947294458356,
+            "L": 0.040825342547798564,
+            "L'": 0.0982938364867642,
+            "B": 0.0307902346718413,
+            "B'": 0.005150950518388363
+          },
+          "elapsed_ms": 727.8362920042127,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "10 moves · Last: U' · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 11,
+          "image_sha256": "0bd9301e2644dd6135c15ee23e8820901bfe7e34a114ef0905a244f1cc3544e1",
+          "action": "U'",
+          "executed": true,
+          "probabilities": {
+            "U": 0.2784188206231445,
+            "U'": 0.297047618964378,
+            "R": 0.018884871430687636,
+            "R'": 0.11987670037964636,
+            "F": 0.06342423584125284,
+            "F'": 0.008101224690761532,
+            "D": 0.028953391589900384,
+            "D'": 0.0129588135726719,
+            "L": 0.04341455913063511,
+            "L'": 0.09742041021846076,
+            "B": 0.026831728694051416,
+            "B'": 0.004667624864409831
+          },
+          "elapsed_ms": 743.6408330104314,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "11 moves · Last: U' · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 12,
+          "image_sha256": "2c56fccdffff9b48f9ef93e515beec755beedd9c2dc486612dc73151786cd878",
+          "action": "U'",
+          "executed": true,
+          "probabilities": {
+            "U": 0.2827150601495651,
+            "U'": 0.2919164800333617,
+            "R": 0.01904803796832691,
+            "R'": 0.1320099354635879,
+            "F": 0.05801154723536502,
+            "F'": 0.008244934007421377,
+            "D": 0.027535452294788945,
+            "D'": 0.01232346249778199,
+            "L": 0.04577673916812749,
+            "L'": 0.09404644429337171,
+            "B": 0.024116458803131666,
+            "B'": 0.00425544808517018
+          },
+          "elapsed_ms": 733.918541984167,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "12 moves · Last: U' · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 13,
+          "image_sha256": "3e286ccdaab0f8a5de5ec1afc74094a92daf2a9680805e83940eb0db33a54a5a",
+          "action": "U'",
+          "executed": true,
+          "probabilities": {
+            "U": 0.268614407125969,
+            "U'": 0.28579405759820353,
+            "R": 0.018568892812032247,
+            "R'": 0.13178076863847227,
+            "F": 0.0727061872229873,
+            "F'": 0.011367857897188667,
+            "D": 0.02557665670971858,
+            "D'": 0.011726341383682124,
+            "L": 0.042765818699413836,
+            "L'": 0.09835476845106167,
+            "B": 0.02845445365330096,
+            "B'": 0.004289789807969785
+          },
+          "elapsed_ms": 731.967750005424,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "13 moves · Last: U' · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 14,
+          "image_sha256": "8ac05f4318c29e40543b4d60acb6e6f09bd18787a832f48d6dd30f753ed0deef",
+          "action": "U'",
+          "executed": true,
+          "probabilities": {
+            "U": 0.25359490167878573,
+            "U'": 0.296794795278562,
+            "R": 0.017749395939130407,
+            "R'": 0.1429367852006094,
+            "F": 0.06313608078268929,
+            "F'": 0.010686757204185349,
+            "D": 0.02767797239678704,
+            "D'": 0.012362947294458356,
+            "L": 0.040825342547798564,
+            "L'": 0.0982938364867642,
+            "B": 0.0307902346718413,
+            "B'": 0.005150950518388363
+          },
+          "elapsed_ms": 730.4984169895761,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "14 moves · Last: U' · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 15,
+          "image_sha256": "0bd9301e2644dd6135c15ee23e8820901bfe7e34a114ef0905a244f1cc3544e1",
+          "action": "U'",
+          "executed": true,
+          "probabilities": {
+            "U": 0.2784188206231445,
+            "U'": 0.297047618964378,
+            "R": 0.018884871430687636,
+            "R'": 0.11987670037964636,
+            "F": 0.06342423584125284,
+            "F'": 0.008101224690761532,
+            "D": 0.028953391589900384,
+            "D'": 0.0129588135726719,
+            "L": 0.04341455913063511,
+            "L'": 0.09742041021846076,
+            "B": 0.026831728694051416,
+            "B'": 0.004667624864409831
+          },
+          "elapsed_ms": 735.0362499710172,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "15 moves · Last: U' · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 16,
+          "image_sha256": "2c56fccdffff9b48f9ef93e515beec755beedd9c2dc486612dc73151786cd878",
+          "action": "U'",
+          "executed": true,
+          "probabilities": {
+            "U": 0.2827150601495651,
+            "U'": 0.2919164800333617,
+            "R": 0.01904803796832691,
+            "R'": 0.1320099354635879,
+            "F": 0.05801154723536502,
+            "F'": 0.008244934007421377,
+            "D": 0.027535452294788945,
+            "D'": 0.01232346249778199,
+            "L": 0.04577673916812749,
+            "L'": 0.09404644429337171,
+            "B": 0.024116458803131666,
+            "B'": 0.00425544808517018
+          },
+          "elapsed_ms": 740.3877080068924,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "16 moves · Last: U' · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 17,
+          "image_sha256": "3e286ccdaab0f8a5de5ec1afc74094a92daf2a9680805e83940eb0db33a54a5a",
+          "action": "U'",
+          "executed": true,
+          "probabilities": {
+            "U": 0.268614407125969,
+            "U'": 0.28579405759820353,
+            "R": 0.018568892812032247,
+            "R'": 0.13178076863847227,
+            "F": 0.0727061872229873,
+            "F'": 0.011367857897188667,
+            "D": 0.02557665670971858,
+            "D'": 0.011726341383682124,
+            "L": 0.042765818699413836,
+            "L'": 0.09835476845106167,
+            "B": 0.02845445365330096,
+            "B'": 0.004289789807969785
+          },
+          "elapsed_ms": 732.3942499933764,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "17 moves · Last: U' · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 18,
+          "image_sha256": "8ac05f4318c29e40543b4d60acb6e6f09bd18787a832f48d6dd30f753ed0deef",
+          "action": "U'",
+          "executed": true,
+          "probabilities": {
+            "U": 0.25359490167878573,
+            "U'": 0.296794795278562,
+            "R": 0.017749395939130407,
+            "R'": 0.1429367852006094,
+            "F": 0.06313608078268929,
+            "F'": 0.010686757204185349,
+            "D": 0.02767797239678704,
+            "D'": 0.012362947294458356,
+            "L": 0.040825342547798564,
+            "L'": 0.0982938364867642,
+            "B": 0.0307902346718413,
+            "B'": 0.005150950518388363
+          },
+          "elapsed_ms": 734.4264999846928,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "18 moves · Last: U' · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 19,
+          "image_sha256": "0bd9301e2644dd6135c15ee23e8820901bfe7e34a114ef0905a244f1cc3544e1",
+          "action": "U'",
+          "executed": true,
+          "probabilities": {
+            "U": 0.2784188206231445,
+            "U'": 0.297047618964378,
+            "R": 0.018884871430687636,
+            "R'": 0.11987670037964636,
+            "F": 0.06342423584125284,
+            "F'": 0.008101224690761532,
+            "D": 0.028953391589900384,
+            "D'": 0.0129588135726719,
+            "L": 0.04341455913063511,
+            "L'": 0.09742041021846076,
+            "B": 0.026831728694051416,
+            "B'": 0.004667624864409831
+          },
+          "elapsed_ms": 738.0017089890316,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "19 moves · Last: U' · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 20,
+          "image_sha256": "2c56fccdffff9b48f9ef93e515beec755beedd9c2dc486612dc73151786cd878",
+          "action": "U'",
+          "executed": true,
+          "probabilities": {
+            "U": 0.2827150601495651,
+            "U'": 0.2919164800333617,
+            "R": 0.01904803796832691,
+            "R'": 0.1320099354635879,
+            "F": 0.05801154723536502,
+            "F'": 0.008244934007421377,
+            "D": 0.027535452294788945,
+            "D'": 0.01232346249778199,
+            "L": 0.04577673916812749,
+            "L'": 0.09404644429337171,
+            "B": 0.024116458803131666,
+            "B'": 0.00425544808517018
+          },
+          "elapsed_ms": 742.3314159968868,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "20 moves · Last: U' · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 21,
+          "image_sha256": "3e286ccdaab0f8a5de5ec1afc74094a92daf2a9680805e83940eb0db33a54a5a",
+          "action": "U'",
+          "executed": true,
+          "probabilities": {
+            "U": 0.268614407125969,
+            "U'": 0.28579405759820353,
+            "R": 0.018568892812032247,
+            "R'": 0.13178076863847227,
+            "F": 0.0727061872229873,
+            "F'": 0.011367857897188667,
+            "D": 0.02557665670971858,
+            "D'": 0.011726341383682124,
+            "L": 0.042765818699413836,
+            "L'": 0.09835476845106167,
+            "B": 0.02845445365330096,
+            "B'": 0.004289789807969785
+          },
+          "elapsed_ms": 746.2091249763034,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "21 moves · Last: U' · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 22,
+          "image_sha256": "8ac05f4318c29e40543b4d60acb6e6f09bd18787a832f48d6dd30f753ed0deef",
+          "action": "U'",
+          "executed": true,
+          "probabilities": {
+            "U": 0.25359490167878573,
+            "U'": 0.296794795278562,
+            "R": 0.017749395939130407,
+            "R'": 0.1429367852006094,
+            "F": 0.06313608078268929,
+            "F'": 0.010686757204185349,
+            "D": 0.02767797239678704,
+            "D'": 0.012362947294458356,
+            "L": 0.040825342547798564,
+            "L'": 0.0982938364867642,
+            "B": 0.0307902346718413,
+            "B'": 0.005150950518388363
+          },
+          "elapsed_ms": 757.4274160433561,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "22 moves · Last: U' · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 23,
+          "image_sha256": "0bd9301e2644dd6135c15ee23e8820901bfe7e34a114ef0905a244f1cc3544e1",
+          "action": "U'",
+          "executed": true,
+          "probabilities": {
+            "U": 0.2784188206231445,
+            "U'": 0.297047618964378,
+            "R": 0.018884871430687636,
+            "R'": 0.11987670037964636,
+            "F": 0.06342423584125284,
+            "F'": 0.008101224690761532,
+            "D": 0.028953391589900384,
+            "D'": 0.0129588135726719,
+            "L": 0.04341455913063511,
+            "L'": 0.09742041021846076,
+            "B": 0.026831728694051416,
+            "B'": 0.004667624864409831
+          },
+          "elapsed_ms": 734.9384999834001,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "23 moves · Last: U' · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 24,
+          "image_sha256": "2c56fccdffff9b48f9ef93e515beec755beedd9c2dc486612dc73151786cd878",
+          "action": "U'",
+          "executed": true,
+          "probabilities": {
+            "U": 0.2827150601495651,
+            "U'": 0.2919164800333617,
+            "R": 0.01904803796832691,
+            "R'": 0.1320099354635879,
+            "F": 0.05801154723536502,
+            "F'": 0.008244934007421377,
+            "D": 0.027535452294788945,
+            "D'": 0.01232346249778199,
+            "L": 0.04577673916812749,
+            "L'": 0.09404644429337171,
+            "B": 0.024116458803131666,
+            "B'": 0.00425544808517018
+          },
+          "elapsed_ms": 728.5024159937166,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "24 moves · Last: U' · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 25,
+          "image_sha256": "3e286ccdaab0f8a5de5ec1afc74094a92daf2a9680805e83940eb0db33a54a5a",
+          "action": "U'",
+          "executed": true,
+          "probabilities": {
+            "U": 0.268614407125969,
+            "U'": 0.28579405759820353,
+            "R": 0.018568892812032247,
+            "R'": 0.13178076863847227,
+            "F": 0.0727061872229873,
+            "F'": 0.011367857897188667,
+            "D": 0.02557665670971858,
+            "D'": 0.011726341383682124,
+            "L": 0.042765818699413836,
+            "L'": 0.09835476845106167,
+            "B": 0.02845445365330096,
+            "B'": 0.004289789807969785
+          },
+          "elapsed_ms": 725.5883749458008,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "25 moves · Last: U' · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 26,
+          "image_sha256": "8ac05f4318c29e40543b4d60acb6e6f09bd18787a832f48d6dd30f753ed0deef",
+          "action": "U'",
+          "executed": true,
+          "probabilities": {
+            "U": 0.25359490167878573,
+            "U'": 0.296794795278562,
+            "R": 0.017749395939130407,
+            "R'": 0.1429367852006094,
+            "F": 0.06313608078268929,
+            "F'": 0.010686757204185349,
+            "D": 0.02767797239678704,
+            "D'": 0.012362947294458356,
+            "L": 0.040825342547798564,
+            "L'": 0.0982938364867642,
+            "B": 0.0307902346718413,
+            "B'": 0.005150950518388363
+          },
+          "elapsed_ms": 730.9878750238568,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "26 moves · Last: U' · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 27,
+          "image_sha256": "0bd9301e2644dd6135c15ee23e8820901bfe7e34a114ef0905a244f1cc3544e1",
+          "action": "U'",
+          "executed": true,
+          "probabilities": {
+            "U": 0.2784188206231445,
+            "U'": 0.297047618964378,
+            "R": 0.018884871430687636,
+            "R'": 0.11987670037964636,
+            "F": 0.06342423584125284,
+            "F'": 0.008101224690761532,
+            "D": 0.028953391589900384,
+            "D'": 0.0129588135726719,
+            "L": 0.04341455913063511,
+            "L'": 0.09742041021846076,
+            "B": 0.026831728694051416,
+            "B'": 0.004667624864409831
+          },
+          "elapsed_ms": 723.4092080034316,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "27 moves · Last: U' · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 28,
+          "image_sha256": "2c56fccdffff9b48f9ef93e515beec755beedd9c2dc486612dc73151786cd878",
+          "action": "U'",
+          "executed": true,
+          "probabilities": {
+            "U": 0.2827150601495651,
+            "U'": 0.2919164800333617,
+            "R": 0.01904803796832691,
+            "R'": 0.1320099354635879,
+            "F": 0.05801154723536502,
+            "F'": 0.008244934007421377,
+            "D": 0.027535452294788945,
+            "D'": 0.01232346249778199,
+            "L": 0.04577673916812749,
+            "L'": 0.09404644429337171,
+            "B": 0.024116458803131666,
+            "B'": 0.00425544808517018
+          },
+          "elapsed_ms": 736.9685000157915,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "28 moves · Last: U' · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 29,
+          "image_sha256": "3e286ccdaab0f8a5de5ec1afc74094a92daf2a9680805e83940eb0db33a54a5a",
+          "action": "U'",
+          "executed": true,
+          "probabilities": {
+            "U": 0.268614407125969,
+            "U'": 0.28579405759820353,
+            "R": 0.018568892812032247,
+            "R'": 0.13178076863847227,
+            "F": 0.0727061872229873,
+            "F'": 0.011367857897188667,
+            "D": 0.02557665670971858,
+            "D'": 0.011726341383682124,
+            "L": 0.042765818699413836,
+            "L'": 0.09835476845106167,
+            "B": 0.02845445365330096,
+            "B'": 0.004289789807969785
+          },
+          "elapsed_ms": 722.3614589893259,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "29 moves · Last: U' · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 30,
+          "image_sha256": "8ac05f4318c29e40543b4d60acb6e6f09bd18787a832f48d6dd30f753ed0deef",
+          "action": "U'",
+          "executed": true,
+          "probabilities": {
+            "U": 0.25359490167878573,
+            "U'": 0.296794795278562,
+            "R": 0.017749395939130407,
+            "R'": 0.1429367852006094,
+            "F": 0.06313608078268929,
+            "F'": 0.010686757204185349,
+            "D": 0.02767797239678704,
+            "D'": 0.012362947294458356,
+            "L": 0.040825342547798564,
+            "L'": 0.0982938364867642,
+            "B": 0.0307902346718413,
+            "B'": 0.005150950518388363
+          },
+          "elapsed_ms": 728.1566670280881,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "30 moves · Last: U' · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 31,
+          "image_sha256": "0bd9301e2644dd6135c15ee23e8820901bfe7e34a114ef0905a244f1cc3544e1",
+          "action": "U'",
+          "executed": true,
+          "probabilities": {
+            "U": 0.2784188206231445,
+            "U'": 0.297047618964378,
+            "R": 0.018884871430687636,
+            "R'": 0.11987670037964636,
+            "F": 0.06342423584125284,
+            "F'": 0.008101224690761532,
+            "D": 0.028953391589900384,
+            "D'": 0.0129588135726719,
+            "L": 0.04341455913063511,
+            "L'": 0.09742041021846076,
+            "B": 0.026831728694051416,
+            "B'": 0.004667624864409831
+          },
+          "elapsed_ms": 717.7583749871701,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "31 moves · Last: U' · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 32,
+          "image_sha256": "2c56fccdffff9b48f9ef93e515beec755beedd9c2dc486612dc73151786cd878",
+          "action": "U'",
+          "executed": true,
+          "probabilities": {
+            "U": 0.2827150601495651,
+            "U'": 0.2919164800333617,
+            "R": 0.01904803796832691,
+            "R'": 0.1320099354635879,
+            "F": 0.05801154723536502,
+            "F'": 0.008244934007421377,
+            "D": 0.027535452294788945,
+            "D'": 0.01232346249778199,
+            "L": 0.04577673916812749,
+            "L'": 0.09404644429337171,
+            "B": 0.024116458803131666,
+            "B'": 0.00425544808517018
+          },
+          "elapsed_ms": 725.7085839519277,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "32 moves · Last: U' · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 33,
+          "image_sha256": "3e286ccdaab0f8a5de5ec1afc74094a92daf2a9680805e83940eb0db33a54a5a",
+          "action": "U'",
+          "executed": true,
+          "probabilities": {
+            "U": 0.268614407125969,
+            "U'": 0.28579405759820353,
+            "R": 0.018568892812032247,
+            "R'": 0.13178076863847227,
+            "F": 0.0727061872229873,
+            "F'": 0.011367857897188667,
+            "D": 0.02557665670971858,
+            "D'": 0.011726341383682124,
+            "L": 0.042765818699413836,
+            "L'": 0.09835476845106167,
+            "B": 0.02845445365330096,
+            "B'": 0.004289789807969785
+          },
+          "elapsed_ms": 724.3628750438802,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "33 moves · Last: U' · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 34,
+          "image_sha256": "8ac05f4318c29e40543b4d60acb6e6f09bd18787a832f48d6dd30f753ed0deef",
+          "action": "U'",
+          "executed": true,
+          "probabilities": {
+            "U": 0.25359490167878573,
+            "U'": 0.296794795278562,
+            "R": 0.017749395939130407,
+            "R'": 0.1429367852006094,
+            "F": 0.06313608078268929,
+            "F'": 0.010686757204185349,
+            "D": 0.02767797239678704,
+            "D'": 0.012362947294458356,
+            "L": 0.040825342547798564,
+            "L'": 0.0982938364867642,
+            "B": 0.0307902346718413,
+            "B'": 0.005150950518388363
+          },
+          "elapsed_ms": 726.5549580333754,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "34 moves · Last: U' · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 35,
+          "image_sha256": "0bd9301e2644dd6135c15ee23e8820901bfe7e34a114ef0905a244f1cc3544e1",
+          "action": "U'",
+          "executed": true,
+          "probabilities": {
+            "U": 0.2784188206231445,
+            "U'": 0.297047618964378,
+            "R": 0.018884871430687636,
+            "R'": 0.11987670037964636,
+            "F": 0.06342423584125284,
+            "F'": 0.008101224690761532,
+            "D": 0.028953391589900384,
+            "D'": 0.0129588135726719,
+            "L": 0.04341455913063511,
+            "L'": 0.09742041021846076,
+            "B": 0.026831728694051416,
+            "B'": 0.004667624864409831
+          },
+          "elapsed_ms": 731.4059999771416,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "35 moves · Last: U' · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 36,
+          "image_sha256": "2c56fccdffff9b48f9ef93e515beec755beedd9c2dc486612dc73151786cd878",
+          "action": "U'",
+          "executed": true,
+          "probabilities": {
+            "U": 0.2827150601495651,
+            "U'": 0.2919164800333617,
+            "R": 0.01904803796832691,
+            "R'": 0.1320099354635879,
+            "F": 0.05801154723536502,
+            "F'": 0.008244934007421377,
+            "D": 0.027535452294788945,
+            "D'": 0.01232346249778199,
+            "L": 0.04577673916812749,
+            "L'": 0.09404644429337171,
+            "B": 0.024116458803131666,
+            "B'": 0.00425544808517018
+          },
+          "elapsed_ms": 727.9663330409676,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "36 moves · Last: U' · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 37,
+          "image_sha256": "3e286ccdaab0f8a5de5ec1afc74094a92daf2a9680805e83940eb0db33a54a5a",
+          "action": "U'",
+          "executed": true,
+          "probabilities": {
+            "U": 0.268614407125969,
+            "U'": 0.28579405759820353,
+            "R": 0.018568892812032247,
+            "R'": 0.13178076863847227,
+            "F": 0.0727061872229873,
+            "F'": 0.011367857897188667,
+            "D": 0.02557665670971858,
+            "D'": 0.011726341383682124,
+            "L": 0.042765818699413836,
+            "L'": 0.09835476845106167,
+            "B": 0.02845445365330096,
+            "B'": 0.004289789807969785
+          },
+          "elapsed_ms": 723.8631249638274,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "37 moves · Last: U' · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 38,
+          "image_sha256": "8ac05f4318c29e40543b4d60acb6e6f09bd18787a832f48d6dd30f753ed0deef",
+          "action": "U'",
+          "executed": true,
+          "probabilities": {
+            "U": 0.25359490167878573,
+            "U'": 0.296794795278562,
+            "R": 0.017749395939130407,
+            "R'": 0.1429367852006094,
+            "F": 0.06313608078268929,
+            "F'": 0.010686757204185349,
+            "D": 0.02767797239678704,
+            "D'": 0.012362947294458356,
+            "L": 0.040825342547798564,
+            "L'": 0.0982938364867642,
+            "B": 0.0307902346718413,
+            "B'": 0.005150950518388363
+          },
+          "elapsed_ms": 717.0576669741422,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "38 moves · Last: U' · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 39,
+          "image_sha256": "0bd9301e2644dd6135c15ee23e8820901bfe7e34a114ef0905a244f1cc3544e1",
+          "action": "U'",
+          "executed": true,
+          "probabilities": {
+            "U": 0.2784188206231445,
+            "U'": 0.297047618964378,
+            "R": 0.018884871430687636,
+            "R'": 0.11987670037964636,
+            "F": 0.06342423584125284,
+            "F'": 0.008101224690761532,
+            "D": 0.028953391589900384,
+            "D'": 0.0129588135726719,
+            "L": 0.04341455913063511,
+            "L'": 0.09742041021846076,
+            "B": 0.026831728694051416,
+            "B'": 0.004667624864409831
+          },
+          "elapsed_ms": 731.5721660270356,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "39 moves · Last: U' · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 40,
+          "image_sha256": "2c56fccdffff9b48f9ef93e515beec755beedd9c2dc486612dc73151786cd878",
+          "action": "U'",
+          "executed": true,
+          "probabilities": {
+            "U": 0.2827150601495651,
+            "U'": 0.2919164800333617,
+            "R": 0.01904803796832691,
+            "R'": 0.1320099354635879,
+            "F": 0.05801154723536502,
+            "F'": 0.008244934007421377,
+            "D": 0.027535452294788945,
+            "D'": 0.01232346249778199,
+            "L": 0.04577673916812749,
+            "L'": 0.09404644429337171,
+            "B": 0.024116458803131666,
+            "B'": 0.00425544808517018
+          },
+          "elapsed_ms": 726.7492079990916,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "40 moves · Last: U' · Goal: all six faces uniform"
+          },
+          "error": null
+        }
+      ]
+    },
+    {
+      "trial": "rubik-follow-up",
+      "source_artifact": "artifacts/rubik-real-episode.json",
+      "model": "mlx-community/Qwen3.5-0.8B-4bit",
+      "fixed_questions": {
+        "action": {
+          "type": "choice",
+          "scoring": "label",
+          "instructions": "You control a real 2x2 Rubik's cube. The screenshot is a six-face unfolded net: U above F; L, F, R, B across the middle; D below F. Each sticker contains its color initial (W white, Y yellow, O orange, R red, G green, B blue). Face names identify positions, not current sticker colors. Goal: make all four stickers on EACH of the six faces the same color. Select the single face turn most likely to restore all six solid-color faces. Moves without a prime turn 90 degrees clockwise when viewing that face directly from outside. Prime moves turn counterclockwise. Each action rotates a full cube layer, including adjacent stickers. Infer the move only from the screenshot; no hidden state or scramble history is supplied.",
+          "criteria": {
+            "U": "Turn the U face 90 degrees clockwise, viewed directly from outside that face.",
+            "U'": "Turn the U face 90 degrees counterclockwise, viewed directly from outside that face.",
+            "R": "Turn the R face 90 degrees clockwise, viewed directly from outside that face.",
+            "R'": "Turn the R face 90 degrees counterclockwise, viewed directly from outside that face.",
+            "F": "Turn the F face 90 degrees clockwise, viewed directly from outside that face.",
+            "F'": "Turn the F face 90 degrees counterclockwise, viewed directly from outside that face.",
+            "D": "Turn the D face 90 degrees clockwise, viewed directly from outside that face.",
+            "D'": "Turn the D face 90 degrees counterclockwise, viewed directly from outside that face.",
+            "L": "Turn the L face 90 degrees clockwise, viewed directly from outside that face.",
+            "L'": "Turn the L face 90 degrees counterclockwise, viewed directly from outside that face.",
+            "B": "Turn the B face 90 degrees clockwise, viewed directly from outside that face.",
+            "B'": "Turn the B face 90 degrees counterclockwise, viewed directly from outside that face."
+          }
+        }
+      },
+      "status": "Step budget reached. Paused without solving the game.",
+      "won": false,
+      "steps": [
+        {
+          "step": 1,
+          "image_sha256": "1a4f5263adf6e72c4398708264ac1fb810006bc4e3a584cb68bf39ff31fe0b7d",
+          "action": "U",
+          "executed": true,
+          "probabilities": {
+            "U": 0.28582678273915224,
+            "U'": 0.25637674608109084,
+            "R": 0.01760621213610883,
+            "R'": 0.12959178843439065,
+            "F": 0.07215566227835844,
+            "F'": 0.010770716929218736,
+            "D": 0.03148251695831722,
+            "D'": 0.01180013579808142,
+            "L": 0.0465751138990855,
+            "L'": 0.10025314548075999,
+            "B": 0.03222928774984202,
+            "B'": 0.005331891515593988
+          },
+          "elapsed_ms": 737.5562909874134,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "1 moves · Last: U · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 2,
+          "image_sha256": "3dca7dd7ba05ee3761c56e33a031c076a433365dc7ef86ec3ae204c8753cfd12",
+          "action": "U",
+          "executed": true,
+          "probabilities": {
+            "U": 0.28874490557764826,
+            "U'": 0.27381966577468536,
+            "R": 0.01659032730827587,
+            "R'": 0.1402300231991339,
+            "F": 0.05486440376833576,
+            "F'": 0.008242294314079308,
+            "D": 0.026519207638698878,
+            "D'": 0.010650931769527278,
+            "L": 0.04583323158416299,
+            "L'": 0.10061568502616527,
+            "B": 0.02927242961656046,
+            "B'": 0.004616894422726609
+          },
+          "elapsed_ms": 735.2210830431432,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "2 moves · Last: U · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 3,
+          "image_sha256": "ff969488ed61e2e7d5758c33da033beeb3cab70b1858823c37cc3486719466ba",
+          "action": "U",
+          "executed": true,
+          "probabilities": {
+            "U": 0.2813205060928681,
+            "U'": 0.26635144197270666,
+            "R": 0.018842752003055487,
+            "R'": 0.1260703827278151,
+            "F": 0.06583650762207273,
+            "F'": 0.00921321570825117,
+            "D": 0.031044411154003807,
+            "D'": 0.012553882308693259,
+            "L": 0.044523000338938586,
+            "L'": 0.10724994337815243,
+            "B": 0.03127509740625141,
+            "B'": 0.005718859287191244
+          },
+          "elapsed_ms": 739.74095802987,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "3 moves · Last: U · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 4,
+          "image_sha256": "ce6c9ee58e22af671c11abb05f0e318833735b591f80ec99d8c327e601b58994",
+          "action": "U",
+          "executed": true,
+          "probabilities": {
+            "U": 0.2685038852847375,
+            "U'": 0.2674708618104325,
+            "R": 0.018494109065156628,
+            "R'": 0.14288748574549115,
+            "F": 0.06298863206045027,
+            "F'": 0.010346441656190431,
+            "D": 0.031849595389364764,
+            "D'": 0.012468116176463193,
+            "L": 0.04522852255262166,
+            "L'": 0.10059182851472033,
+            "B": 0.033035849489020226,
+            "B'": 0.006134672255351208
+          },
+          "elapsed_ms": 722.8826669743285,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "4 moves · Last: U · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 5,
+          "image_sha256": "1a4f5263adf6e72c4398708264ac1fb810006bc4e3a584cb68bf39ff31fe0b7d",
+          "action": "U",
+          "executed": true,
+          "probabilities": {
+            "U": 0.28582678273915224,
+            "U'": 0.25637674608109084,
+            "R": 0.01760621213610883,
+            "R'": 0.12959178843439065,
+            "F": 0.07215566227835844,
+            "F'": 0.010770716929218736,
+            "D": 0.03148251695831722,
+            "D'": 0.01180013579808142,
+            "L": 0.0465751138990855,
+            "L'": 0.10025314548075999,
+            "B": 0.03222928774984202,
+            "B'": 0.005331891515593988
+          },
+          "elapsed_ms": 725.2387499902397,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "5 moves · Last: U · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 6,
+          "image_sha256": "3dca7dd7ba05ee3761c56e33a031c076a433365dc7ef86ec3ae204c8753cfd12",
+          "action": "U",
+          "executed": true,
+          "probabilities": {
+            "U": 0.28874490557764826,
+            "U'": 0.27381966577468536,
+            "R": 0.01659032730827587,
+            "R'": 0.1402300231991339,
+            "F": 0.05486440376833576,
+            "F'": 0.008242294314079308,
+            "D": 0.026519207638698878,
+            "D'": 0.010650931769527278,
+            "L": 0.04583323158416299,
+            "L'": 0.10061568502616527,
+            "B": 0.02927242961656046,
+            "B'": 0.004616894422726609
+          },
+          "elapsed_ms": 728.2147500081919,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "6 moves · Last: U · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 7,
+          "image_sha256": "ff969488ed61e2e7d5758c33da033beeb3cab70b1858823c37cc3486719466ba",
+          "action": "U",
+          "executed": true,
+          "probabilities": {
+            "U": 0.2813205060928681,
+            "U'": 0.26635144197270666,
+            "R": 0.018842752003055487,
+            "R'": 0.1260703827278151,
+            "F": 0.06583650762207273,
+            "F'": 0.00921321570825117,
+            "D": 0.031044411154003807,
+            "D'": 0.012553882308693259,
+            "L": 0.044523000338938586,
+            "L'": 0.10724994337815243,
+            "B": 0.03127509740625141,
+            "B'": 0.005718859287191244
+          },
+          "elapsed_ms": 735.1800830219872,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "7 moves · Last: U · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 8,
+          "image_sha256": "ce6c9ee58e22af671c11abb05f0e318833735b591f80ec99d8c327e601b58994",
+          "action": "U",
+          "executed": true,
+          "probabilities": {
+            "U": 0.2685038852847375,
+            "U'": 0.2674708618104325,
+            "R": 0.018494109065156628,
+            "R'": 0.14288748574549115,
+            "F": 0.06298863206045027,
+            "F'": 0.010346441656190431,
+            "D": 0.031849595389364764,
+            "D'": 0.012468116176463193,
+            "L": 0.04522852255262166,
+            "L'": 0.10059182851472033,
+            "B": 0.033035849489020226,
+            "B'": 0.006134672255351208
+          },
+          "elapsed_ms": 730.164207983762,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "8 moves · Last: U · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 9,
+          "image_sha256": "1a4f5263adf6e72c4398708264ac1fb810006bc4e3a584cb68bf39ff31fe0b7d",
+          "action": "U",
+          "executed": true,
+          "probabilities": {
+            "U": 0.28582678273915224,
+            "U'": 0.25637674608109084,
+            "R": 0.01760621213610883,
+            "R'": 0.12959178843439065,
+            "F": 0.07215566227835844,
+            "F'": 0.010770716929218736,
+            "D": 0.03148251695831722,
+            "D'": 0.01180013579808142,
+            "L": 0.0465751138990855,
+            "L'": 0.10025314548075999,
+            "B": 0.03222928774984202,
+            "B'": 0.005331891515593988
+          },
+          "elapsed_ms": 748.7970420042984,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "9 moves · Last: U · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 10,
+          "image_sha256": "3dca7dd7ba05ee3761c56e33a031c076a433365dc7ef86ec3ae204c8753cfd12",
+          "action": "U",
+          "executed": true,
+          "probabilities": {
+            "U": 0.28874490557764826,
+            "U'": 0.27381966577468536,
+            "R": 0.01659032730827587,
+            "R'": 0.1402300231991339,
+            "F": 0.05486440376833576,
+            "F'": 0.008242294314079308,
+            "D": 0.026519207638698878,
+            "D'": 0.010650931769527278,
+            "L": 0.04583323158416299,
+            "L'": 0.10061568502616527,
+            "B": 0.02927242961656046,
+            "B'": 0.004616894422726609
+          },
+          "elapsed_ms": 721.0654999944381,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "10 moves · Last: U · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 11,
+          "image_sha256": "ff969488ed61e2e7d5758c33da033beeb3cab70b1858823c37cc3486719466ba",
+          "action": "U",
+          "executed": true,
+          "probabilities": {
+            "U": 0.2813205060928681,
+            "U'": 0.26635144197270666,
+            "R": 0.018842752003055487,
+            "R'": 0.1260703827278151,
+            "F": 0.06583650762207273,
+            "F'": 0.00921321570825117,
+            "D": 0.031044411154003807,
+            "D'": 0.012553882308693259,
+            "L": 0.044523000338938586,
+            "L'": 0.10724994337815243,
+            "B": 0.03127509740625141,
+            "B'": 0.005718859287191244
+          },
+          "elapsed_ms": 742.3185829538852,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "11 moves · Last: U · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 12,
+          "image_sha256": "ce6c9ee58e22af671c11abb05f0e318833735b591f80ec99d8c327e601b58994",
+          "action": "U",
+          "executed": true,
+          "probabilities": {
+            "U": 0.2685038852847375,
+            "U'": 0.2674708618104325,
+            "R": 0.018494109065156628,
+            "R'": 0.14288748574549115,
+            "F": 0.06298863206045027,
+            "F'": 0.010346441656190431,
+            "D": 0.031849595389364764,
+            "D'": 0.012468116176463193,
+            "L": 0.04522852255262166,
+            "L'": 0.10059182851472033,
+            "B": 0.033035849489020226,
+            "B'": 0.006134672255351208
+          },
+          "elapsed_ms": 827.0771669922397,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "12 moves · Last: U · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 13,
+          "image_sha256": "1a4f5263adf6e72c4398708264ac1fb810006bc4e3a584cb68bf39ff31fe0b7d",
+          "action": "U",
+          "executed": true,
+          "probabilities": {
+            "U": 0.28582678273915224,
+            "U'": 0.25637674608109084,
+            "R": 0.01760621213610883,
+            "R'": 0.12959178843439065,
+            "F": 0.07215566227835844,
+            "F'": 0.010770716929218736,
+            "D": 0.03148251695831722,
+            "D'": 0.01180013579808142,
+            "L": 0.0465751138990855,
+            "L'": 0.10025314548075999,
+            "B": 0.03222928774984202,
+            "B'": 0.005331891515593988
+          },
+          "elapsed_ms": 854.9662500154227,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "13 moves · Last: U · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 14,
+          "image_sha256": "3dca7dd7ba05ee3761c56e33a031c076a433365dc7ef86ec3ae204c8753cfd12",
+          "action": "U",
+          "executed": true,
+          "probabilities": {
+            "U": 0.28874490557764826,
+            "U'": 0.27381966577468536,
+            "R": 0.01659032730827587,
+            "R'": 0.1402300231991339,
+            "F": 0.05486440376833576,
+            "F'": 0.008242294314079308,
+            "D": 0.026519207638698878,
+            "D'": 0.010650931769527278,
+            "L": 0.04583323158416299,
+            "L'": 0.10061568502616527,
+            "B": 0.02927242961656046,
+            "B'": 0.004616894422726609
+          },
+          "elapsed_ms": 737.2615420026705,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "14 moves · Last: U · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 15,
+          "image_sha256": "ff969488ed61e2e7d5758c33da033beeb3cab70b1858823c37cc3486719466ba",
+          "action": "U",
+          "executed": true,
+          "probabilities": {
+            "U": 0.2813205060928681,
+            "U'": 0.26635144197270666,
+            "R": 0.018842752003055487,
+            "R'": 0.1260703827278151,
+            "F": 0.06583650762207273,
+            "F'": 0.00921321570825117,
+            "D": 0.031044411154003807,
+            "D'": 0.012553882308693259,
+            "L": 0.044523000338938586,
+            "L'": 0.10724994337815243,
+            "B": 0.03127509740625141,
+            "B'": 0.005718859287191244
+          },
+          "elapsed_ms": 739.5430420292541,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "15 moves · Last: U · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 16,
+          "image_sha256": "ce6c9ee58e22af671c11abb05f0e318833735b591f80ec99d8c327e601b58994",
+          "action": "U",
+          "executed": true,
+          "probabilities": {
+            "U": 0.2685038852847375,
+            "U'": 0.2674708618104325,
+            "R": 0.018494109065156628,
+            "R'": 0.14288748574549115,
+            "F": 0.06298863206045027,
+            "F'": 0.010346441656190431,
+            "D": 0.031849595389364764,
+            "D'": 0.012468116176463193,
+            "L": 0.04522852255262166,
+            "L'": 0.10059182851472033,
+            "B": 0.033035849489020226,
+            "B'": 0.006134672255351208
+          },
+          "elapsed_ms": 740.1683750213124,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "16 moves · Last: U · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 17,
+          "image_sha256": "1a4f5263adf6e72c4398708264ac1fb810006bc4e3a584cb68bf39ff31fe0b7d",
+          "action": "U",
+          "executed": true,
+          "probabilities": {
+            "U": 0.28582678273915224,
+            "U'": 0.25637674608109084,
+            "R": 0.01760621213610883,
+            "R'": 0.12959178843439065,
+            "F": 0.07215566227835844,
+            "F'": 0.010770716929218736,
+            "D": 0.03148251695831722,
+            "D'": 0.01180013579808142,
+            "L": 0.0465751138990855,
+            "L'": 0.10025314548075999,
+            "B": 0.03222928774984202,
+            "B'": 0.005331891515593988
+          },
+          "elapsed_ms": 740.0428340188228,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "17 moves · Last: U · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 18,
+          "image_sha256": "3dca7dd7ba05ee3761c56e33a031c076a433365dc7ef86ec3ae204c8753cfd12",
+          "action": "U",
+          "executed": true,
+          "probabilities": {
+            "U": 0.28874490557764826,
+            "U'": 0.27381966577468536,
+            "R": 0.01659032730827587,
+            "R'": 0.1402300231991339,
+            "F": 0.05486440376833576,
+            "F'": 0.008242294314079308,
+            "D": 0.026519207638698878,
+            "D'": 0.010650931769527278,
+            "L": 0.04583323158416299,
+            "L'": 0.10061568502616527,
+            "B": 0.02927242961656046,
+            "B'": 0.004616894422726609
+          },
+          "elapsed_ms": 734.0305419638753,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "18 moves · Last: U · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 19,
+          "image_sha256": "ff969488ed61e2e7d5758c33da033beeb3cab70b1858823c37cc3486719466ba",
+          "action": "U",
+          "executed": true,
+          "probabilities": {
+            "U": 0.2813205060928681,
+            "U'": 0.26635144197270666,
+            "R": 0.018842752003055487,
+            "R'": 0.1260703827278151,
+            "F": 0.06583650762207273,
+            "F'": 0.00921321570825117,
+            "D": 0.031044411154003807,
+            "D'": 0.012553882308693259,
+            "L": 0.044523000338938586,
+            "L'": 0.10724994337815243,
+            "B": 0.03127509740625141,
+            "B'": 0.005718859287191244
+          },
+          "elapsed_ms": 736.2922499887645,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "19 moves · Last: U · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 20,
+          "image_sha256": "ce6c9ee58e22af671c11abb05f0e318833735b591f80ec99d8c327e601b58994",
+          "action": "U",
+          "executed": true,
+          "probabilities": {
+            "U": 0.2685038852847375,
+            "U'": 0.2674708618104325,
+            "R": 0.018494109065156628,
+            "R'": 0.14288748574549115,
+            "F": 0.06298863206045027,
+            "F'": 0.010346441656190431,
+            "D": 0.031849595389364764,
+            "D'": 0.012468116176463193,
+            "L": 0.04522852255262166,
+            "L'": 0.10059182851472033,
+            "B": 0.033035849489020226,
+            "B'": 0.006134672255351208
+          },
+          "elapsed_ms": 740.337582945358,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "20 moves · Last: U · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 21,
+          "image_sha256": "1a4f5263adf6e72c4398708264ac1fb810006bc4e3a584cb68bf39ff31fe0b7d",
+          "action": "U",
+          "executed": true,
+          "probabilities": {
+            "U": 0.28582678273915224,
+            "U'": 0.25637674608109084,
+            "R": 0.01760621213610883,
+            "R'": 0.12959178843439065,
+            "F": 0.07215566227835844,
+            "F'": 0.010770716929218736,
+            "D": 0.03148251695831722,
+            "D'": 0.01180013579808142,
+            "L": 0.0465751138990855,
+            "L'": 0.10025314548075999,
+            "B": 0.03222928774984202,
+            "B'": 0.005331891515593988
+          },
+          "elapsed_ms": 735.7919159694575,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "21 moves · Last: U · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 22,
+          "image_sha256": "3dca7dd7ba05ee3761c56e33a031c076a433365dc7ef86ec3ae204c8753cfd12",
+          "action": "U",
+          "executed": true,
+          "probabilities": {
+            "U": 0.28874490557764826,
+            "U'": 0.27381966577468536,
+            "R": 0.01659032730827587,
+            "R'": 0.1402300231991339,
+            "F": 0.05486440376833576,
+            "F'": 0.008242294314079308,
+            "D": 0.026519207638698878,
+            "D'": 0.010650931769527278,
+            "L": 0.04583323158416299,
+            "L'": 0.10061568502616527,
+            "B": 0.02927242961656046,
+            "B'": 0.004616894422726609
+          },
+          "elapsed_ms": 737.372083007358,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "22 moves · Last: U · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 23,
+          "image_sha256": "ff969488ed61e2e7d5758c33da033beeb3cab70b1858823c37cc3486719466ba",
+          "action": "U",
+          "executed": true,
+          "probabilities": {
+            "U": 0.2813205060928681,
+            "U'": 0.26635144197270666,
+            "R": 0.018842752003055487,
+            "R'": 0.1260703827278151,
+            "F": 0.06583650762207273,
+            "F'": 0.00921321570825117,
+            "D": 0.031044411154003807,
+            "D'": 0.012553882308693259,
+            "L": 0.044523000338938586,
+            "L'": 0.10724994337815243,
+            "B": 0.03127509740625141,
+            "B'": 0.005718859287191244
+          },
+          "elapsed_ms": 732.848500018008,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "23 moves · Last: U · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 24,
+          "image_sha256": "ce6c9ee58e22af671c11abb05f0e318833735b591f80ec99d8c327e601b58994",
+          "action": "U",
+          "executed": true,
+          "probabilities": {
+            "U": 0.2685038852847375,
+            "U'": 0.2674708618104325,
+            "R": 0.018494109065156628,
+            "R'": 0.14288748574549115,
+            "F": 0.06298863206045027,
+            "F'": 0.010346441656190431,
+            "D": 0.031849595389364764,
+            "D'": 0.012468116176463193,
+            "L": 0.04522852255262166,
+            "L'": 0.10059182851472033,
+            "B": 0.033035849489020226,
+            "B'": 0.006134672255351208
+          },
+          "elapsed_ms": 733.1362499971874,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "24 moves · Last: U · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 25,
+          "image_sha256": "1a4f5263adf6e72c4398708264ac1fb810006bc4e3a584cb68bf39ff31fe0b7d",
+          "action": "U",
+          "executed": true,
+          "probabilities": {
+            "U": 0.28582678273915224,
+            "U'": 0.25637674608109084,
+            "R": 0.01760621213610883,
+            "R'": 0.12959178843439065,
+            "F": 0.07215566227835844,
+            "F'": 0.010770716929218736,
+            "D": 0.03148251695831722,
+            "D'": 0.01180013579808142,
+            "L": 0.0465751138990855,
+            "L'": 0.10025314548075999,
+            "B": 0.03222928774984202,
+            "B'": 0.005331891515593988
+          },
+          "elapsed_ms": 735.1577499648556,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "25 moves · Last: U · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 26,
+          "image_sha256": "3dca7dd7ba05ee3761c56e33a031c076a433365dc7ef86ec3ae204c8753cfd12",
+          "action": "U",
+          "executed": true,
+          "probabilities": {
+            "U": 0.28874490557764826,
+            "U'": 0.27381966577468536,
+            "R": 0.01659032730827587,
+            "R'": 0.1402300231991339,
+            "F": 0.05486440376833576,
+            "F'": 0.008242294314079308,
+            "D": 0.026519207638698878,
+            "D'": 0.010650931769527278,
+            "L": 0.04583323158416299,
+            "L'": 0.10061568502616527,
+            "B": 0.02927242961656046,
+            "B'": 0.004616894422726609
+          },
+          "elapsed_ms": 780.6747920112684,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "26 moves · Last: U · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 27,
+          "image_sha256": "ff969488ed61e2e7d5758c33da033beeb3cab70b1858823c37cc3486719466ba",
+          "action": "U",
+          "executed": true,
+          "probabilities": {
+            "U": 0.2813205060928681,
+            "U'": 0.26635144197270666,
+            "R": 0.018842752003055487,
+            "R'": 0.1260703827278151,
+            "F": 0.06583650762207273,
+            "F'": 0.00921321570825117,
+            "D": 0.031044411154003807,
+            "D'": 0.012553882308693259,
+            "L": 0.044523000338938586,
+            "L'": 0.10724994337815243,
+            "B": 0.03127509740625141,
+            "B'": 0.005718859287191244
+          },
+          "elapsed_ms": 760.6219580047764,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "27 moves · Last: U · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 28,
+          "image_sha256": "ce6c9ee58e22af671c11abb05f0e318833735b591f80ec99d8c327e601b58994",
+          "action": "U",
+          "executed": true,
+          "probabilities": {
+            "U": 0.2685038852847375,
+            "U'": 0.2674708618104325,
+            "R": 0.018494109065156628,
+            "R'": 0.14288748574549115,
+            "F": 0.06298863206045027,
+            "F'": 0.010346441656190431,
+            "D": 0.031849595389364764,
+            "D'": 0.012468116176463193,
+            "L": 0.04522852255262166,
+            "L'": 0.10059182851472033,
+            "B": 0.033035849489020226,
+            "B'": 0.006134672255351208
+          },
+          "elapsed_ms": 776.0879999841563,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "28 moves · Last: U · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 29,
+          "image_sha256": "1a4f5263adf6e72c4398708264ac1fb810006bc4e3a584cb68bf39ff31fe0b7d",
+          "action": "U",
+          "executed": true,
+          "probabilities": {
+            "U": 0.28582678273915224,
+            "U'": 0.25637674608109084,
+            "R": 0.01760621213610883,
+            "R'": 0.12959178843439065,
+            "F": 0.07215566227835844,
+            "F'": 0.010770716929218736,
+            "D": 0.03148251695831722,
+            "D'": 0.01180013579808142,
+            "L": 0.0465751138990855,
+            "L'": 0.10025314548075999,
+            "B": 0.03222928774984202,
+            "B'": 0.005331891515593988
+          },
+          "elapsed_ms": 771.7587500228547,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "29 moves · Last: U · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 30,
+          "image_sha256": "3dca7dd7ba05ee3761c56e33a031c076a433365dc7ef86ec3ae204c8753cfd12",
+          "action": "U",
+          "executed": true,
+          "probabilities": {
+            "U": 0.28874490557764826,
+            "U'": 0.27381966577468536,
+            "R": 0.01659032730827587,
+            "R'": 0.1402300231991339,
+            "F": 0.05486440376833576,
+            "F'": 0.008242294314079308,
+            "D": 0.026519207638698878,
+            "D'": 0.010650931769527278,
+            "L": 0.04583323158416299,
+            "L'": 0.10061568502616527,
+            "B": 0.02927242961656046,
+            "B'": 0.004616894422726609
+          },
+          "elapsed_ms": 778.892167028971,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "30 moves · Last: U · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 31,
+          "image_sha256": "ff969488ed61e2e7d5758c33da033beeb3cab70b1858823c37cc3486719466ba",
+          "action": "U",
+          "executed": true,
+          "probabilities": {
+            "U": 0.2813205060928681,
+            "U'": 0.26635144197270666,
+            "R": 0.018842752003055487,
+            "R'": 0.1260703827278151,
+            "F": 0.06583650762207273,
+            "F'": 0.00921321570825117,
+            "D": 0.031044411154003807,
+            "D'": 0.012553882308693259,
+            "L": 0.044523000338938586,
+            "L'": 0.10724994337815243,
+            "B": 0.03127509740625141,
+            "B'": 0.005718859287191244
+          },
+          "elapsed_ms": 818.5777079779655,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "31 moves · Last: U · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 32,
+          "image_sha256": "ce6c9ee58e22af671c11abb05f0e318833735b591f80ec99d8c327e601b58994",
+          "action": "U",
+          "executed": true,
+          "probabilities": {
+            "U": 0.2685038852847375,
+            "U'": 0.2674708618104325,
+            "R": 0.018494109065156628,
+            "R'": 0.14288748574549115,
+            "F": 0.06298863206045027,
+            "F'": 0.010346441656190431,
+            "D": 0.031849595389364764,
+            "D'": 0.012468116176463193,
+            "L": 0.04522852255262166,
+            "L'": 0.10059182851472033,
+            "B": 0.033035849489020226,
+            "B'": 0.006134672255351208
+          },
+          "elapsed_ms": 797.1991249942221,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "32 moves · Last: U · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 33,
+          "image_sha256": "1a4f5263adf6e72c4398708264ac1fb810006bc4e3a584cb68bf39ff31fe0b7d",
+          "action": "U",
+          "executed": true,
+          "probabilities": {
+            "U": 0.28582678273915224,
+            "U'": 0.25637674608109084,
+            "R": 0.01760621213610883,
+            "R'": 0.12959178843439065,
+            "F": 0.07215566227835844,
+            "F'": 0.010770716929218736,
+            "D": 0.03148251695831722,
+            "D'": 0.01180013579808142,
+            "L": 0.0465751138990855,
+            "L'": 0.10025314548075999,
+            "B": 0.03222928774984202,
+            "B'": 0.005331891515593988
+          },
+          "elapsed_ms": 786.3151250057854,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "33 moves · Last: U · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 34,
+          "image_sha256": "3dca7dd7ba05ee3761c56e33a031c076a433365dc7ef86ec3ae204c8753cfd12",
+          "action": "U",
+          "executed": true,
+          "probabilities": {
+            "U": 0.28874490557764826,
+            "U'": 0.27381966577468536,
+            "R": 0.01659032730827587,
+            "R'": 0.1402300231991339,
+            "F": 0.05486440376833576,
+            "F'": 0.008242294314079308,
+            "D": 0.026519207638698878,
+            "D'": 0.010650931769527278,
+            "L": 0.04583323158416299,
+            "L'": 0.10061568502616527,
+            "B": 0.02927242961656046,
+            "B'": 0.004616894422726609
+          },
+          "elapsed_ms": 843.08629197767,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "34 moves · Last: U · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 35,
+          "image_sha256": "ff969488ed61e2e7d5758c33da033beeb3cab70b1858823c37cc3486719466ba",
+          "action": "U",
+          "executed": true,
+          "probabilities": {
+            "U": 0.2813205060928681,
+            "U'": 0.26635144197270666,
+            "R": 0.018842752003055487,
+            "R'": 0.1260703827278151,
+            "F": 0.06583650762207273,
+            "F'": 0.00921321570825117,
+            "D": 0.031044411154003807,
+            "D'": 0.012553882308693259,
+            "L": 0.044523000338938586,
+            "L'": 0.10724994337815243,
+            "B": 0.03127509740625141,
+            "B'": 0.005718859287191244
+          },
+          "elapsed_ms": 730.358749977313,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "35 moves · Last: U · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 36,
+          "image_sha256": "ce6c9ee58e22af671c11abb05f0e318833735b591f80ec99d8c327e601b58994",
+          "action": "U",
+          "executed": true,
+          "probabilities": {
+            "U": 0.2685038852847375,
+            "U'": 0.2674708618104325,
+            "R": 0.018494109065156628,
+            "R'": 0.14288748574549115,
+            "F": 0.06298863206045027,
+            "F'": 0.010346441656190431,
+            "D": 0.031849595389364764,
+            "D'": 0.012468116176463193,
+            "L": 0.04522852255262166,
+            "L'": 0.10059182851472033,
+            "B": 0.033035849489020226,
+            "B'": 0.006134672255351208
+          },
+          "elapsed_ms": 771.9579170225188,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "36 moves · Last: U · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 37,
+          "image_sha256": "1a4f5263adf6e72c4398708264ac1fb810006bc4e3a584cb68bf39ff31fe0b7d",
+          "action": "U",
+          "executed": true,
+          "probabilities": {
+            "U": 0.28582678273915224,
+            "U'": 0.25637674608109084,
+            "R": 0.01760621213610883,
+            "R'": 0.12959178843439065,
+            "F": 0.07215566227835844,
+            "F'": 0.010770716929218736,
+            "D": 0.03148251695831722,
+            "D'": 0.01180013579808142,
+            "L": 0.0465751138990855,
+            "L'": 0.10025314548075999,
+            "B": 0.03222928774984202,
+            "B'": 0.005331891515593988
+          },
+          "elapsed_ms": 744.1359169897623,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "37 moves · Last: U · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 38,
+          "image_sha256": "3dca7dd7ba05ee3761c56e33a031c076a433365dc7ef86ec3ae204c8753cfd12",
+          "action": "U",
+          "executed": true,
+          "probabilities": {
+            "U": 0.28874490557764826,
+            "U'": 0.27381966577468536,
+            "R": 0.01659032730827587,
+            "R'": 0.1402300231991339,
+            "F": 0.05486440376833576,
+            "F'": 0.008242294314079308,
+            "D": 0.026519207638698878,
+            "D'": 0.010650931769527278,
+            "L": 0.04583323158416299,
+            "L'": 0.10061568502616527,
+            "B": 0.02927242961656046,
+            "B'": 0.004616894422726609
+          },
+          "elapsed_ms": 751.6963329981081,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "38 moves · Last: U · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 39,
+          "image_sha256": "ff969488ed61e2e7d5758c33da033beeb3cab70b1858823c37cc3486719466ba",
+          "action": "U",
+          "executed": true,
+          "probabilities": {
+            "U": 0.2813205060928681,
+            "U'": 0.26635144197270666,
+            "R": 0.018842752003055487,
+            "R'": 0.1260703827278151,
+            "F": 0.06583650762207273,
+            "F'": 0.00921321570825117,
+            "D": 0.031044411154003807,
+            "D'": 0.012553882308693259,
+            "L": 0.044523000338938586,
+            "L'": 0.10724994337815243,
+            "B": 0.03127509740625141,
+            "B'": 0.005718859287191244
+          },
+          "elapsed_ms": 746.6077920398675,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "39 moves · Last: U · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 40,
+          "image_sha256": "ce6c9ee58e22af671c11abb05f0e318833735b591f80ec99d8c327e601b58994",
+          "action": "U",
+          "executed": true,
+          "probabilities": {
+            "U": 0.2685038852847375,
+            "U'": 0.2674708618104325,
+            "R": 0.018494109065156628,
+            "R'": 0.14288748574549115,
+            "F": 0.06298863206045027,
+            "F'": 0.010346441656190431,
+            "D": 0.031849595389364764,
+            "D'": 0.012468116176463193,
+            "L": 0.04522852255262166,
+            "L'": 0.10059182851472033,
+            "B": 0.033035849489020226,
+            "B'": 0.006134672255351208
+          },
+          "elapsed_ms": 750.0533330021426,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "40 moves · Last: U · Goal: all six faces uniform"
+          },
+          "error": null
+        },
+        {
+          "step": 41,
+          "image_sha256": "1a4f5263adf6e72c4398708264ac1fb810006bc4e3a584cb68bf39ff31fe0b7d",
+          "action": "U",
+          "executed": true,
+          "probabilities": {
+            "U": 0.28582678273915224,
+            "U'": 0.25637674608109084,
+            "R": 0.01760621213610883,
+            "R'": 0.12959178843439065,
+            "F": 0.07215566227835844,
+            "F'": 0.010770716929218736,
+            "D": 0.03148251695831722,
+            "D'": 0.01180013579808142,
+            "L": 0.0465751138990855,
+            "L'": 0.10025314548075999,
+            "B": 0.03222928774984202,
+            "B'": 0.005331891515593988
+          },
+          "elapsed_ms": 738.9809589949436,
+          "game_after": {
+            "done": false,
+            "won": false,
+            "message": "41 moves · Last: U · Goal: all six faces uniform"
+          },
+          "error": null
+        }
+      ]
+    }
+  ]
+}

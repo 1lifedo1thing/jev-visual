@@ -10,6 +10,10 @@ A small, runnable project for learning **vision-language model inference on Appl
 >
 > This is an independent community implementation and does not claim to reproduce TypeSafe Jev's proprietary model architecture, RLCD training, calibration, or serving system.
 
+## Inference overview
+
+![Jev-like visual inference overview](docs/images/jev-visual-en.png)
+
 ## Run locally
 
 Requires an **Apple Silicon Mac with Metal**. Tested on M4 / 16GB, macOS 15.1, Python 3.13.1. First setup downloads dependencies and approximately 596 MiB of model weights; inference then runs locally.
@@ -53,6 +57,10 @@ Read the code in this order:
 This uses existing weights; no training or calibration. Candidate probabilities are relative to supplied options, **not correctness estimates**. Only the Qwen3.5 adapter is verified. Cache sharing is within one request and copies state; it is not zero-copy sharing. Supports 1–64 questions, 2–26 options each.
 
 [Inference details](docs/inference.md) · [Request examples, Python API and tests](docs/usage.md)
+
+## Visual game demos
+
+Open [/demo/](http://127.0.0.1:8788/demo/) on the running local server for the sorting factory, camera gesture console and a 2×2 cube. Each action uses only a canvas screenshot plus fixed rules; the sidebar shows inputs and action probabilities. Manual and model controls are included. The cube is a limitation demo: the current model cannot reliably solve it in the default non-thinking, direct-scoring mode. [Setup, tests and limitations](demo/README.md).
 
 ## Compare and verify
 

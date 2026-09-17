@@ -10,6 +10,10 @@
 >
 > 这是独立社区的 inference 实验，不代表 TypeSafe Jev 的真实原理，也不复现其私有模型架构、RLCD 训练、概率校准或服务系统。
 
+## 推理原理图
+
+![Jev-like 视觉推理原理图](docs/images/jev-visual-zh.png)
+
 ## 本地启动
 
 需要支持 Metal 的 **Apple Silicon（M 系列）Mac**。已在 M4 / 16GB、macOS 15.1、Python 3.13.1 验证。首次安装需联网下载依赖和约 596 MiB 权重，之后推理在本地运行。
@@ -53,6 +57,10 @@ jev-visual examples/photo-request.json --model-path .models/Qwen3.5-0.8B-4bit
 使用现成权重，未做训练或校准。候选概率只表示给定选项之间的相对偏好，**不等于答案正确率**。目前只验证了 Qwen3.5 adapter；缓存在单次请求内复用，需要复制状态，并非零拷贝。支持 1–64 题，每题 2–26 个选项。
 
 [推理实现详解](docs/inference.md) · [请求示例、Python API 与测试](docs/usage.md)（英文）
+
+## 视觉游戏 Demo
+
+启动本地服务后打开 [/demo/](http://127.0.0.1:8788/demo/)，体验分拣工厂、摄像头手势控制台和二阶魔方。可手动操作或启动模型，每步只输入画面截图和固定规则，右侧展示输入与动作概率。Demo 界面与说明使用英文。魔方保留为能力边界实验：当前模型在默认非思考、直接打分模式下无法可靠复原。[运行、测试与限制](demo/README.md)。
 
 ## 对照实验与验证
 
