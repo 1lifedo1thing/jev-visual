@@ -1,0 +1,399 @@
+{
+  "description": "One slow-mode development trial, not a capability benchmark. Actual model decisions were never overridden. All 38 selected Hold; brick clears and the return do not demonstrate tracking ability.",
+  "model": "mlx-community/Qwen3.5-0.8B-4bit",
+  "mode": "non-thinking, direct label scoring",
+  "summary": {
+    "speed": "slow",
+    "phase": "lost",
+    "cleared": 5,
+    "lives": 0,
+    "hits": 1,
+    "elapsed": 20.841666666666125,
+    "decisions": 38
+  },
+  "model_latency_median_ms": 359.10108298412524,
+  "round_trip_median_ms": 363.90000000596046,
+  "all_executed": true,
+  "decisions": [
+    {
+      "choice": "hold",
+      "probabilities": {
+        "left": 0.181715816712946,
+        "hold": 0.7169502332974118,
+        "right": 0.10133394998964235
+      },
+      "frame_gap_ms": 150,
+      "image_sha256": "1cd4956ecc114f7d7bafba457c04739729a7e5e9aa01d6189597cf2cc4735953"
+    },
+    {
+      "choice": "hold",
+      "probabilities": {
+        "left": 0.20051726302262468,
+        "hold": 0.690942257921578,
+        "right": 0.10854047905579725
+      },
+      "frame_gap_ms": 150,
+      "image_sha256": "b188d4c3f50b3b64c9426fe1b7516c47adccdce690e888308b2b5aa071764be7"
+    },
+    {
+      "choice": "hold",
+      "probabilities": {
+        "left": 0.1832038878212664,
+        "hold": 0.7114399638082681,
+        "right": 0.1053561483704655
+      },
+      "frame_gap_ms": 150,
+      "image_sha256": "6e1540617990d93519f4ce2bce07aa984eba5e56a3bdf28fbeaf97e1b09fe1d0"
+    },
+    {
+      "choice": "hold",
+      "probabilities": {
+        "left": 0.19917223657992356,
+        "hold": 0.6855565958638457,
+        "right": 0.11527116755623078
+      },
+      "frame_gap_ms": 150,
+      "image_sha256": "b889261f54bd89c1f6518e1cd7bf51626cbe04460d2a796e01f96be0564dfed3"
+    },
+    {
+      "choice": "hold",
+      "probabilities": {
+        "left": 0.21409681724877652,
+        "hold": 0.6593300498247274,
+        "right": 0.12657313292649602
+      },
+      "frame_gap_ms": 150,
+      "image_sha256": "f5cf8b437ef1894ce926025dc356ea126c008845a6fcbf55e559b5886cbe8623"
+    },
+    {
+      "choice": "hold",
+      "probabilities": {
+        "left": 0.20404826153746156,
+        "hold": 0.6790933888421965,
+        "right": 0.11685834962034197
+      },
+      "frame_gap_ms": 150,
+      "image_sha256": "f8d91527c0e21a9b89eefd2b3f5c4c57158a900e4e4ae80ed915cb08ab018790"
+    },
+    {
+      "choice": "hold",
+      "probabilities": {
+        "left": 0.202656904558104,
+        "hold": 0.6809010824673419,
+        "right": 0.11644201297455417
+      },
+      "frame_gap_ms": 199.9000000000001,
+      "image_sha256": "bd40a64e5ca64f0aac6ea16dc4956accd1a3e1da63c0052812bab4d6653ba077"
+    },
+    {
+      "choice": "hold",
+      "probabilities": {
+        "left": 0.21090862752772743,
+        "hold": 0.6789125844091156,
+        "right": 0.110178788063157
+      },
+      "frame_gap_ms": 150,
+      "image_sha256": "15243f092e2dd41d486b60019463e10cd3b85f0e932e8e2987110b02b38ba50b"
+    },
+    {
+      "choice": "hold",
+      "probabilities": {
+        "left": 0.220702294501406,
+        "hold": 0.6653943854855406,
+        "right": 0.11390332001305341
+      },
+      "frame_gap_ms": 150.09999999999945,
+      "image_sha256": "71d4306859c2dfc800aa3b980b24845c4d3a91eb87a7a797d38ad86bc7b86e9f"
+    },
+    {
+      "choice": "hold",
+      "probabilities": {
+        "left": 0.2000082362185017,
+        "hold": 0.6900590170527686,
+        "right": 0.10993274672872982
+      },
+      "frame_gap_ms": 150,
+      "image_sha256": "57e75fccf90cb8b66a7cbb963b7bb5ba3dc32a653514f442b32b67a7958ddaf2"
+    },
+    {
+      "choice": "hold",
+      "probabilities": {
+        "left": 0.20182408487272627,
+        "hold": 0.690272883517712,
+        "right": 0.1079030316095617
+      },
+      "frame_gap_ms": 150.10000000000036,
+      "image_sha256": "40bc1d6747d8ad9412220e0d307427a8682409f36224846384b2c041f882bc03"
+    },
+    {
+      "choice": "hold",
+      "probabilities": {
+        "left": 0.20512744922808795,
+        "hold": 0.679987182425959,
+        "right": 0.114885368345953
+      },
+      "frame_gap_ms": 149.89999999999964,
+      "image_sha256": "09763e5d920378852eed8d2b59122ead95e37694a0c70b0c882af7906728db47"
+    },
+    {
+      "choice": "hold",
+      "probabilities": {
+        "left": 0.19942889735705172,
+        "hold": 0.6835317496871486,
+        "right": 0.11703935295579977
+      },
+      "frame_gap_ms": 150,
+      "image_sha256": "04cd0e2ac4810ce88b7b4124d3fdfdcb18201cdfde318e88c89de22010d1b324"
+    },
+    {
+      "choice": "hold",
+      "probabilities": {
+        "left": 0.20915920775242872,
+        "hold": 0.6725098699261582,
+        "right": 0.11833092232141293
+      },
+      "frame_gap_ms": 150,
+      "image_sha256": "3a7116f3d1a5a6baf72f3503810423290419d07bfe2c9dad2f9072778cf08f0f"
+    },
+    {
+      "choice": "hold",
+      "probabilities": {
+        "left": 0.22893353523723703,
+        "hold": 0.6491626549103872,
+        "right": 0.12190380985237588
+      },
+      "frame_gap_ms": 150,
+      "image_sha256": "84eeb1126673ee049e864988155ae5c0854a21c45503984d18d4dbf3d9308252"
+    },
+    {
+      "choice": "hold",
+      "probabilities": {
+        "left": 0.1973747013994808,
+        "hold": 0.6864735772213567,
+        "right": 0.11615172137916252
+      },
+      "frame_gap_ms": 150,
+      "image_sha256": "f9b54e9ea28b6e1a822b26a4adc5656eed007c9fa561a66f4d570c2c9b0f4a0e"
+    },
+    {
+      "choice": "hold",
+      "probabilities": {
+        "left": 0.20504023060437845,
+        "hold": 0.6733469308607477,
+        "right": 0.12161283853487395
+      },
+      "frame_gap_ms": 150,
+      "image_sha256": "40f2dcce3d946a02e1097b973114448880f1c16fb9259b8a0a6b702d3d017bc4"
+    },
+    {
+      "choice": "hold",
+      "probabilities": {
+        "left": 0.20197632345259753,
+        "hold": 0.6794653414708407,
+        "right": 0.1185583350765618
+      },
+      "frame_gap_ms": 149.89999999999964,
+      "image_sha256": "e19b024da1f411b71e9639eb9a2d1058db4a0d570aac5718afa32fac50165653"
+    },
+    {
+      "choice": "hold",
+      "probabilities": {
+        "left": 0.209174812686237,
+        "hold": 0.6758481924425493,
+        "right": 0.11497699487121367
+      },
+      "frame_gap_ms": 150,
+      "image_sha256": "efc4c633dc119df3c8eb0ff9013b6bd4d70f681ec3a9ea5517b937dbbbe657d8"
+    },
+    {
+      "choice": "hold",
+      "probabilities": {
+        "left": 0.19695112505608695,
+        "hold": 0.6970680658969605,
+        "right": 0.1059808090469526
+      },
+      "frame_gap_ms": 150,
+      "image_sha256": "61752cc2f5c741a5d22f99b78fbf2a3a8faa3b54dde69d094712b32a367feeb3"
+    },
+    {
+      "choice": "hold",
+      "probabilities": {
+        "left": 0.20380747593097104,
+        "hold": 0.6882367520460178,
+        "right": 0.1079557720230113
+      },
+      "frame_gap_ms": 150,
+      "image_sha256": "284d92b199397fae94b3d28c056d4278d9da8cd88cace4f2ce60cecb6d708c71"
+    },
+    {
+      "choice": "hold",
+      "probabilities": {
+        "left": 0.22542466390709273,
+        "hold": 0.6487603747707448,
+        "right": 0.1258149613221625
+      },
+      "frame_gap_ms": 150,
+      "image_sha256": "ef8469265b28a8eb7e073017ca2d19fad64233457268df277ce6c23e97d64557"
+    },
+    {
+      "choice": "hold",
+      "probabilities": {
+        "left": 0.20499948085257502,
+        "hold": 0.6758647495375095,
+        "right": 0.11913576960991547
+      },
+      "frame_gap_ms": 150.10000000000036,
+      "image_sha256": "0cac27da156e0bd2fc201345e22d31babb6f95565df6a84ec082ebc7164285dd"
+    },
+    {
+      "choice": "hold",
+      "probabilities": {
+        "left": 0.21974021339161598,
+        "hold": 0.6581135322804226,
+        "right": 0.12214625432796156
+      },
+      "frame_gap_ms": 150,
+      "image_sha256": "f53526fec7ad078246eba7fe296190be8995e6f310fc4aec8dac94f06cb38c4a"
+    },
+    {
+      "choice": "hold",
+      "probabilities": {
+        "left": 0.23278850813119925,
+        "hold": 0.6335371427999759,
+        "right": 0.1336743490688249
+      },
+      "frame_gap_ms": 149.89999999999964,
+      "image_sha256": "abc0a9d36691860d3d8a7f88d982acd599a8cbdffc69b39aff4373bb4ceb9cb9"
+    },
+    {
+      "choice": "hold",
+      "probabilities": {
+        "left": 0.21434135529400752,
+        "hold": 0.6576175675616963,
+        "right": 0.1280410771442961
+      },
+      "frame_gap_ms": 150,
+      "image_sha256": "b7372f4c1998489f369c1f209524a1f7ae97811fe494c4d1abfd94bcc6cf2736"
+    },
+    {
+      "choice": "hold",
+      "probabilities": {
+        "left": 0.21736482585087166,
+        "hold": 0.6573816269319094,
+        "right": 0.125253547217219
+      },
+      "frame_gap_ms": 149.89999999999964,
+      "image_sha256": "195dba1f4e9aa6c94852cd8304191c9b3636d9bc7bac9207836710e6b8550790"
+    },
+    {
+      "choice": "hold",
+      "probabilities": {
+        "left": 0.217312877840996,
+        "hold": 0.6537900056040462,
+        "right": 0.12889711655495767
+      },
+      "frame_gap_ms": 150,
+      "image_sha256": "26e872daf9700da715b2518284493b4d84cded75a4a2da06325aa4ca5e5440f6"
+    },
+    {
+      "choice": "hold",
+      "probabilities": {
+        "left": 0.22647495895241063,
+        "hold": 0.6487753246010426,
+        "right": 0.12474971644654692
+      },
+      "frame_gap_ms": 150.10000000000036,
+      "image_sha256": "198e8376aae9b9d4fc3a2f8839d5180ac74c657109b2f0fe83b4a3caccb26302"
+    },
+    {
+      "choice": "hold",
+      "probabilities": {
+        "left": 0.20268273462594041,
+        "hold": 0.6831982469862878,
+        "right": 0.11411901838777176
+      },
+      "frame_gap_ms": 150,
+      "image_sha256": "79d873f70de6d394ac383a8dd55e682bb109859f94f833043443f84ffee2974f"
+    },
+    {
+      "choice": "hold",
+      "probabilities": {
+        "left": 0.21409728461659547,
+        "hold": 0.6656583301007958,
+        "right": 0.12024438528260868
+      },
+      "frame_gap_ms": 150,
+      "image_sha256": "77b29b38f9ff311bbd5f578f3614f354237b35e5d9449f62e3cd3f2ae3be4768"
+    },
+    {
+      "choice": "hold",
+      "probabilities": {
+        "left": 0.2094170947358512,
+        "hold": 0.6652063411702991,
+        "right": 0.12537656409384962
+      },
+      "frame_gap_ms": 150,
+      "image_sha256": "5573fd9cf298952f89fe9ba517a941c7f9c4f0dd3030ae21d70c584a8b3ef5d3"
+    },
+    {
+      "choice": "hold",
+      "probabilities": {
+        "left": 0.21724516247754047,
+        "hold": 0.6608794911187346,
+        "right": 0.12187534640372497
+      },
+      "frame_gap_ms": 150,
+      "image_sha256": "802b4410e095b51f62d25041d450c4373ecf67d19ab7e374ce5b9515b0ebdb3e"
+    },
+    {
+      "choice": "hold",
+      "probabilities": {
+        "left": 0.2229406810210227,
+        "hold": 0.6530905319814039,
+        "right": 0.12396878699757347
+      },
+      "frame_gap_ms": 149.90000000000146,
+      "image_sha256": "d005179bf8970f5080508c15c4035d7d9b270e72792f644521e46c8fa9f03829"
+    },
+    {
+      "choice": "hold",
+      "probabilities": {
+        "left": 0.21651350314602863,
+        "hold": 0.6567744921728981,
+        "right": 0.1267120046810733
+      },
+      "frame_gap_ms": 150.09999999999854,
+      "image_sha256": "8060676093195e0d7d19bc58fd976d1b088e1a3026669f07c77a32c35f4fc4a0"
+    },
+    {
+      "choice": "hold",
+      "probabilities": {
+        "left": 0.22079554972123008,
+        "hold": 0.6545207353986694,
+        "right": 0.12468371488010065
+      },
+      "frame_gap_ms": 150,
+      "image_sha256": "337a7ba8629e8192bfd2e5cfcc6ec7966ef54580339cd02e0ec49ea4c8cf91df"
+    },
+    {
+      "choice": "hold",
+      "probabilities": {
+        "left": 0.21544607494114817,
+        "hold": 0.656610192929919,
+        "right": 0.12794373212893287
+      },
+      "frame_gap_ms": 150,
+      "image_sha256": "7d4cfdbc4315711281684663de5e826a47914b51cd7aa137ad7e713333c46282"
+    },
+    {
+      "choice": "hold",
+      "probabilities": {
+        "left": 0.22968466705023954,
+        "hold": 0.6361010347110265,
+        "right": 0.13421429823873388
+      },
+      "frame_gap_ms": 150,
+      "image_sha256": "83ef5fb6db9a46e89ff8b8f7307b18ec89b3c04532bbf4510a10fce9210fa52b"
+    }
+  ]
+}

@@ -49,6 +49,7 @@ def test_demo_pages_and_static_modules():
         ('/demo/', 'Visual inference demos'),
         ('/demo/rubik/', 'game.js'),
         ('/demo/factory/', 'factory.js'),
+        ('/demo/breakout/', 'game.js'),
         ('/demo/gestures/', 'gestures.js'),
         ('/demo/shared.js', 'mountDemo'),
     ]:

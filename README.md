@@ -60,7 +60,24 @@ This uses existing weights; no training or calibration. Candidate probabilities 
 
 ## Visual game demos
 
-Open [/demo/](http://127.0.0.1:8788/demo/) on the running local server for the sorting factory, camera gesture console and a 2×2 cube. Each action uses only a canvas screenshot plus fixed rules; the sidebar shows inputs and action probabilities. Manual and model controls are included. The cube is a limitation demo: the current model cannot reliably solve it in the default non-thinking, direct-scoring mode. [Setup, tests and limitations](demo/README.md).
+Click a preview to open the recording:
+
+| AI sorting factory | Breakout |
+|---|---|
+| [![AI sorting factory recording](docs/demo/demo_factory.jpg)](docs/demo/demo_factory.mp4) | [![Breakout recording](docs/demo/demo_brick.jpg)](docs/demo/demo_brick.mp4) |
+| [Watch video](docs/demo/demo_factory.mp4) | [Watch video](docs/demo/demo_brick.mp4) |
+
+The factory classifies screenshots of objects on a moving conveyor and selects a sorting lane. The sidebar shows the actual input and candidate probabilities.
+
+**Breakout exposes the limits of Qwen3.5-0.8B-4bit in our non-thinking, direct-scoring setup.** Asking it to follow the ball or choose Left/Right was unreliable: repeated choices could pin the paddle against an edge. The working approach simplifies the task:
+
+1. Use one full-size screenshot, a larger ball, a wider paddle and a slower Easy mode.
+2. Draw five numbered regions and ask only **which region contains the ball**.
+3. Move the paddle toward that region's fixed center. The movement code reads the paddle position, never the ball position; human players have the same target buttons.
+
+This reduces game control to visual classification, without a hidden ball tracker or solver. In a separate recorded test, 80 decisions produced **9 bricks cleared and 6 returns, with 2 lives remaining**; the test stopped before completion. It is a simplified demo, not evidence of general game-playing ability. These trials do not isolate the effect of 4-bit quantization. [Implementation and observations](demo/breakout/README.md).
+
+Open [/demo/](http://127.0.0.1:8788/demo/) on the local server to try these demos, the camera gesture console and the 2×2 cube. The current model cannot reliably solve the cube. [Setup, tests and limitations](demo/README.md).
 
 ## Compare and verify
 

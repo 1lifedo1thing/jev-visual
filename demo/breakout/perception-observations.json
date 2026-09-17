@@ -1,0 +1,340 @@
+{
+  "description": "Six fixed single-frame scenes using the game renderer and prompt; each image tested with both candidate orders. Ground truth is evaluation-only. Small development probe, not a benchmark.",
+  "model": "mlx-community/Qwen3.5-0.8B-4bit",
+  "original_correct": 5,
+  "reversed_correct": 3,
+  "total_images": 6,
+  "changed_choices": 4,
+  "records": [
+    {
+      "id": 0,
+      "expected": "left",
+      "image_sha256": "154200ed15e8fd3c923784fda4f457c26add015c422daf041d90a1f47e11b6c6",
+      "answers": {
+        "original": {
+          "type": "choice",
+          "probabilities": {
+            "left": 0.6490908987524787,
+            "right": 0.35090910124752134
+          },
+          "concentration": 0.06512265959831809,
+          "choice": "left",
+          "scoring": "label",
+          "candidate_scores": [
+            20.805816650390625,
+            20.190771102905273
+          ],
+          "score_kind": "candidate_logit",
+          "candidate_token_ids": [
+            [
+              32
+            ],
+            [
+              33
+            ]
+          ],
+          "prompt_sha256": "41b7b389dfef93234f05733b39a639a0193b24dcb340b5e6718b11ca4f29d1f1"
+        },
+        "reversed": {
+          "type": "choice",
+          "probabilities": {
+            "right": 0.523608283037848,
+            "left": 0.4763917169621519
+          },
+          "concentration": 0.0016087732071251581,
+          "choice": "right",
+          "scoring": "label",
+          "candidate_scores": [
+            20.59028434753418,
+            20.49578094482422
+          ],
+          "score_kind": "candidate_logit",
+          "candidate_token_ids": [
+            [
+              32
+            ],
+            [
+              33
+            ]
+          ],
+          "prompt_sha256": "bc8fa156f5bd24812043ae5a33f647854d6b216ac6224052909119796a234573"
+        }
+      }
+    },
+    {
+      "id": 1,
+      "expected": "right",
+      "image_sha256": "a70a82f0f84cb8cf7cb57ccdae81cc2eac08d2a76dccd8ccd8bb1e21abf08994",
+      "answers": {
+        "original": {
+          "type": "choice",
+          "probabilities": {
+            "left": 0.3747634342848906,
+            "right": 0.6252365657151093
+          },
+          "concentration": 0.04574051012345581,
+          "choice": "right",
+          "scoring": "label",
+          "candidate_scores": [
+            20.74789810180664,
+            21.259733200073242
+          ],
+          "score_kind": "candidate_logit",
+          "candidate_token_ids": [
+            [
+              32
+            ],
+            [
+              33
+            ]
+          ],
+          "prompt_sha256": "41b7b389dfef93234f05733b39a639a0193b24dcb340b5e6718b11ca4f29d1f1"
+        },
+        "reversed": {
+          "type": "choice",
+          "probabilities": {
+            "right": 0.6357755978699212,
+            "left": 0.3642244021300788
+          },
+          "concentration": 0.05386601729065954,
+          "choice": "right",
+          "scoring": "label",
+          "candidate_scores": [
+            20.822494506835938,
+            20.265419006347656
+          ],
+          "score_kind": "candidate_logit",
+          "candidate_token_ids": [
+            [
+              32
+            ],
+            [
+              33
+            ]
+          ],
+          "prompt_sha256": "bc8fa156f5bd24812043ae5a33f647854d6b216ac6224052909119796a234573"
+        }
+      }
+    },
+    {
+      "id": 2,
+      "expected": "left",
+      "image_sha256": "59308b0bcb2bf57ce861254579b7c96687f9cc373ca460e2c99a3b22ab27856e",
+      "answers": {
+        "original": {
+          "type": "choice",
+          "probabilities": {
+            "left": 0.6798217099908328,
+            "right": 0.3201782900091672
+          },
+          "concentration": 0.0954247638807183,
+          "choice": "left",
+          "scoring": "label",
+          "candidate_scores": [
+            20.5908203125,
+            19.837867736816406
+          ],
+          "score_kind": "candidate_logit",
+          "candidate_token_ids": [
+            [
+              32
+            ],
+            [
+              33
+            ]
+          ],
+          "prompt_sha256": "41b7b389dfef93234f05733b39a639a0193b24dcb340b5e6718b11ca4f29d1f1"
+        },
+        "reversed": {
+          "type": "choice",
+          "probabilities": {
+            "right": 0.5263161441930234,
+            "left": 0.4736838558069766
+          },
+          "concentration": 0.0019991700465011863,
+          "choice": "right",
+          "scoring": "label",
+          "candidate_scores": [
+            20.35772705078125,
+            20.252365112304688
+          ],
+          "score_kind": "candidate_logit",
+          "candidate_token_ids": [
+            [
+              32
+            ],
+            [
+              33
+            ]
+          ],
+          "prompt_sha256": "bc8fa156f5bd24812043ae5a33f647854d6b216ac6224052909119796a234573"
+        }
+      }
+    },
+    {
+      "id": 3,
+      "expected": "right",
+      "image_sha256": "be3e44bf9654659544ad6f31e840b9db449bee716272971ed8effd4445e4b4f4",
+      "answers": {
+        "original": {
+          "type": "choice",
+          "probabilities": {
+            "left": 0.5936736923709794,
+            "right": 0.40632630762902056
+          },
+          "concentration": 0.025468836519421778,
+          "choice": "left",
+          "scoring": "label",
+          "candidate_scores": [
+            20.716022491455078,
+            20.336849212646484
+          ],
+          "score_kind": "candidate_logit",
+          "candidate_token_ids": [
+            [
+              32
+            ],
+            [
+              33
+            ]
+          ],
+          "prompt_sha256": "41b7b389dfef93234f05733b39a639a0193b24dcb340b5e6718b11ca4f29d1f1"
+        },
+        "reversed": {
+          "type": "choice",
+          "probabilities": {
+            "right": 0.5329265222906763,
+            "left": 0.4670734777093237
+          },
+          "concentration": 0.0031304775060320145,
+          "choice": "right",
+          "scoring": "label",
+          "candidate_scores": [
+            20.537460327148438,
+            20.405563354492188
+          ],
+          "score_kind": "candidate_logit",
+          "candidate_token_ids": [
+            [
+              32
+            ],
+            [
+              33
+            ]
+          ],
+          "prompt_sha256": "bc8fa156f5bd24812043ae5a33f647854d6b216ac6224052909119796a234573"
+        }
+      }
+    },
+    {
+      "id": 4,
+      "expected": "left",
+      "image_sha256": "5dce6ad43625b6af9ce62978a2343e0a44f5117078fab0896c0f14f7038fb9de",
+      "answers": {
+        "original": {
+          "type": "choice",
+          "probabilities": {
+            "left": 0.5098449379184072,
+            "right": 0.4901550620815929
+          },
+          "concentration": 0.0002796781664662351,
+          "choice": "left",
+          "scoring": "label",
+          "candidate_scores": [
+            20.868553161621094,
+            20.82916831970215
+          ],
+          "score_kind": "candidate_logit",
+          "candidate_token_ids": [
+            [
+              32
+            ],
+            [
+              33
+            ]
+          ],
+          "prompt_sha256": "41b7b389dfef93234f05733b39a639a0193b24dcb340b5e6718b11ca4f29d1f1"
+        },
+        "reversed": {
+          "type": "choice",
+          "probabilities": {
+            "right": 0.6515843953454922,
+            "left": 0.3484156046545078
+          },
+          "concentration": 0.06735490916432074,
+          "choice": "right",
+          "scoring": "label",
+          "candidate_scores": [
+            20.814403533935547,
+            20.188392639160156
+          ],
+          "score_kind": "candidate_logit",
+          "candidate_token_ids": [
+            [
+              32
+            ],
+            [
+              33
+            ]
+          ],
+          "prompt_sha256": "bc8fa156f5bd24812043ae5a33f647854d6b216ac6224052909119796a234573"
+        }
+      }
+    },
+    {
+      "id": 5,
+      "expected": "right",
+      "image_sha256": "85273458c9eb1485336b66696316dbcaf2002963bf2a5102eb3d50e23ea1e1a7",
+      "answers": {
+        "original": {
+          "type": "choice",
+          "probabilities": {
+            "left": 0.3838749524856432,
+            "right": 0.6161250475143569
+          },
+          "concentration": 0.03926713277137761,
+          "choice": "right",
+          "scoring": "label",
+          "candidate_scores": [
+            20.742156982421875,
+            21.215290069580078
+          ],
+          "score_kind": "candidate_logit",
+          "candidate_token_ids": [
+            [
+              32
+            ],
+            [
+              33
+            ]
+          ],
+          "prompt_sha256": "41b7b389dfef93234f05733b39a639a0193b24dcb340b5e6718b11ca4f29d1f1"
+        },
+        "reversed": {
+          "type": "choice",
+          "probabilities": {
+            "right": 0.6332144844675927,
+            "left": 0.3667855155324074
+          },
+          "concentration": 0.051828088437746334,
+          "choice": "right",
+          "scoring": "label",
+          "candidate_scores": [
+            20.808792114257812,
+            20.262760162353516
+          ],
+          "score_kind": "candidate_logit",
+          "candidate_token_ids": [
+            [
+              32
+            ],
+            [
+              33
+            ]
+          ],
+          "prompt_sha256": "bc8fa156f5bd24812043ae5a33f647854d6b216ac6224052909119796a234573"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Breakout · Jev Visual</title>
+<link rel="stylesheet" href="../shared.css"><link rel="stylesheet" href="../live.css">
+<style>
+#board { background:#121c29; touch-action:none; }
+.direction { touch-action:none; min-width:95px; }
+.live-record img { float:none; width:100%; height:auto; max-height:240px; background:#121c29; }
+.action-indicator { font:13px ui-monospace,monospace; color:var(--accent); }
+#observation { width:100%; height:auto; display:block; background:#121c29; }
+</style>
+</head>
+<body><main class="shell">
+<header class="header"><a class="eyebrow" href="../">JEV VISUAL / BREAKOUT</a><h1>See the ball. Choose its lane.</h1><p class="subtitle">Classic brick breaking, controlled by sight. Play yourself or let the local model take over.</p></header>
+<div class="live-layout"><section>
+<canvas id="board" class="live-stage" width="640" height="480" aria-label="Breakout game: white ball, orange paddle and colored bricks"></canvas>
+<div class="live-metrics"><span>Bricks<strong id="bricks">0 / 24</strong></span><span>Lives<strong id="lives">3</strong></span><span>Returns<strong id="hits">0</strong></span><span>Play time<strong id="time">0.0 s</strong></span></div>
+<div class="live-controls"><button id="play" class="primary">Play / resume</button><button id="ai">Start AI</button><button id="manual">Take manual control</button><button id="pause">Pause</button><button id="reset">New game</button><label>Ball speed <select id="speed"><option value="slow">Easy · 110 px/s</option><option value="normal">Fast · 220 px/s</option></select></label></div>
+<div class="live-controls"><button class="direction" data-action="left">← Left</button><button class="direction" data-action="right">Right →</button><button data-lane="1">Lane 1</button><button data-lane="2">Lane 2</button><button data-lane="3">Lane 3</button><button data-lane="4">Lane 4</button><button data-lane="5">Lane 5</button><span class="action-indicator" id="action">MANUAL / IDLE</span></div>
+<p id="status" class="status" aria-live="polite">Press Play or Start AI. Clear all 24 bricks before losing three balls.</p>
+<p class="note">Hold ← / → or A / D to move; Space pauses or resumes. Touch controls work too. A new ball serves automatically after a miss. Speed changes start a new game. AI runs stop after 200 decisions.</p>
+<details><summary>What the model sees</summary><p class="note">One full-size 640×480 screenshot, exactly the game you see. The model selects the numbered column containing the white ball. The paddle moves smoothly toward that fixed lane center, just like pressing a Lane button. No coordinates, velocity, predicted landing point or computed direction are supplied. A larger ball, wider paddle and clean background are shared by human and AI play. A target remains active for up to 800 ms, then stops until a fresh decision arrives. Responses older than 800 ms are not executed.</p><canvas id="observation" width="640" height="480" aria-label="Actual single screenshot supplied to the model"></canvas></details>
+<p class="note">This is an experiment, not a proven game-playing agent. The model can miss the ball or choose poor moves. Candidate probabilities are normalized scores, not accuracy estimates. AI selects one of five visible lanes. The actuator reads only the paddle position and selected lane, never the ball position. <a href="README.md">Results and test details</a>.</p>
+</section><aside class="live-aside"><h2>Visual decision feed</h2><p id="latency">No inference yet.</p><button id="export">Export run</button><p>Actual single-frame inputs and all five lane probabilities. Latest 12 shown; export includes up to 200 decisions.</p><div id="feed"></div></aside></div>
+</main><script type="module" src="game.js"></script></body></html>

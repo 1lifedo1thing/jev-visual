@@ -1,9 +1,10 @@
 # Visual inference demos
 
-Three browser demos use the local Jev Visual model. No cloud API, frontend build or Node server is needed to play.
+Four browser demos use the local Jev Visual model. No cloud API, frontend build or Node server is needed to play.
 
 | Demo | What it does | Current capability |
 |---|---|---|
+| [Breakout](breakout/) | Selects one of five visible paddle targets from a screenshot | One 80-decision run: 9 bricks, 6 returns, 2 lives remaining; not completed |
 | [Sorting factory](factory/) | Classifies object screenshots while a conveyor keeps moving | 12/12 correct in one fixed local trial |
 | [Gesture console](gestures/) | Uses camera frames to control a particle field | UI tested with a synthetic camera; real-hand accuracy not evaluated |
 | [2×2 cube](rubik/) | Shows two 3D views, sends a labeled flat net, and exposes perception/action decisions | **Current model cannot reliably solve it** in the default non-thinking, direct-scoring mode |
@@ -49,6 +50,7 @@ npx playwright install chromium
 npm run test:browser
 node rubik/browser-check.mjs
 npm run test:live
+npm run test:breakout
 # Actual local model, saves records to ../artifacts/:
 npm run test:browser -- --real
 npm run test:live -- --real
