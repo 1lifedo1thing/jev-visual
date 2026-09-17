@@ -1,0 +1,52 @@
+import os
+import asyncio
+from concurrent.futures import ThreadPoolExecutor
+from contextlib import asynccontextmanager
+from functools import partial
+
+from fastapi import FastAPI, HTTPException
+from fastapi.responses import HTMLResponse
+
+from .schema import Request
+
+
+@asynccontextmanager
+async def lifespan(app):
+    from .engine import Engine
+    # MLX streams are thread-local. Load and infer on the SAME dedicated worker,
+    # never on FastAPI's arbitrary request threadpool.
+    with ThreadPoolExecutor(max_workers=1, thread_name_prefix="visual-jev") as executor:
+        app.state.executor = executor
+        app.state.engine = await asyncio.get_running_loop().run_in_executor(
+            executor, partial(Engine, os.environ.get("VISUAL_JEV_MODEL_PATH"))
+        )
+        yield
+
+
+app = FastAPI(title="Visual Jev (local Qwen prototype)", lifespan=lifespan)
+
+
+@app.get("/health")
+def health():
+    return {"ready": hasattr(app.state, "engine"), "calibrated": False}
+
+
+@app.post("/v1/judge")
+async def judge(request: Request):
+    try:
+        return await asyncio.get_running_loop().run_in_executor(
+            app.state.executor, partial(app.state.engine.judge, request, allow_path=False)
+        )
+    except (ValueError, OSError) as exc:
+        raise HTTPException(status_code=422, detail=str(exc)) from exc
+
+
+@app.get("/", response_class=HTMLResponse)
+def home():
+    return '''<!doctype html><html lang="en"><meta charset="utf-8"><title>Visual Jev</title>
+<style>body{max-width:900px;margin:40px auto;font:16px system-ui;background:#f6f7fa;color:#172331}textarea{width:100%;height:260px}button{padding:12px 24px;margin:15px 0}pre{white-space:pre-wrap;background:white;padding:20px}img{max-width:360px;max-height:250px}small{color:#536275}</style>
+<h1>Visual Jev</h1><p>Choose an image and ask several decision questions.</p><input id="file" type="file" accept="image/*"><p><img id="preview"></p>
+<textarea id="questions">{"subject":{"type":"choice","instructions":"What is the main subject in the image?","criteria":{"person":"A person","animal":"An animal","object":"An object","other":"Something else"}},"has_text":{"type":"noul","instructions":"Is there readable text in the image?"}}</textarea>
+<button id="run">Analyze image</button><small>Candidate probabilities are relative to the supplied options, not calibrated.</small><pre id="result">Waiting for an image</pre>
+<script>let image;const $=id=>document.getElementById(id);$('file').onchange=()=>{const f=$('file').files[0];if(!f)return;const r=new FileReader();r.onload=()=>{image=r.result;$('preview').src=image};r.readAsDataURL(f)};
+$('run').onclick=async()=>{if(!image){$('result').textContent='Choose an image first.';return}$('run').disabled=true;$('result').textContent='Analyzing…';try{const questions=JSON.parse($('questions').value);const r=await fetch('/v1/judge',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({image,questions})});$('result').textContent=JSON.stringify(await r.json(),null,2)}catch(e){$('result').textContent=String(e)}finally{$('run').disabled=false}};</script></html>'''

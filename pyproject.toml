@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "visual-jev"
+version = "0.1.0"
+description = "Local visual typed judgments with Qwen3.5 and MLX"
+requires-python = ">=3.11"
+dependencies = ["mlx-vlm==0.7.1", "mlx==0.32.2", "fastapi", "uvicorn", "pillow", "numpy"]
+
+[project.optional-dependencies]
+test = ["pytest", "httpx"]
+
+[project.scripts]
+visual-jev = "visual_jev.cli:main"
+visual-jev-download = "visual_jev.download:main"
+
+[tool.setuptools.packages.find]
+include = ["visual_jev*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

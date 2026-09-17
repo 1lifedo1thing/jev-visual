@@ -1,0 +1,303 @@
+{
+  "shared": {
+    "model": "mlx-community/Qwen3.5-0.8B-4bit",
+    "revision": null,
+    "model_source": ".models/Qwen3.5-0.8B-4bit",
+    "answers": {
+      "native": {
+        "type": "choice",
+        "probabilities": {
+          "dog": 0.974538449029761,
+          "cat": 0.025461550970239038
+        },
+        "concentration": 0.8289058528589189,
+        "choice": "dog",
+        "scoring": "single_token",
+        "candidate_scores": [
+          19.549278259277344,
+          15.904483795166016
+        ],
+        "score_kind": "candidate_logit",
+        "candidate_token_ids": [
+          [
+            17907
+          ],
+          [
+            4466
+          ]
+        ],
+        "prompt_sha256": "47e2eb35039f616bbb98c7aa09262df8a4eb744bbcfa4553d8d750edd8ea50bc"
+      },
+      "phrase": {
+        "type": "choice",
+        "probabilities": {
+          "short": 0.0074379061322669615,
+          "dog": 0.8316018873094979,
+          "cat": 0.16096020655823523
+        },
+        "concentration": 0.559614777142924,
+        "choice": "dog",
+        "scoring": "sequence",
+        "candidate_scores": [
+          -6.887990951538086,
+          -2.1712265014648438,
+          -3.8134231567382812
+        ],
+        "score_kind": "sequence_log_probability_including_eos",
+        "candidate_token_ids": [
+          [
+            5603,
+            248046
+          ],
+          [
+            5603,
+            5388,
+            248046
+          ],
+          [
+            5603,
+            7993,
+            248046
+          ]
+        ],
+        "prompt_sha256": "6187643c88982c4e5057f9ccfa1c275758278bffc195dbc6734d3b33f99cce4b"
+      },
+      "chinese": {
+        "type": "choice",
+        "probabilities": {
+          "out": 0.9992360433014059,
+          "in": 0.000763956698594094
+        },
+        "concentration": 0.9909880876841801,
+        "choice": "out",
+        "scoring": "sequence",
+        "candidate_scores": [
+          -0.5651264190673828,
+          -7.741361618041992
+        ],
+        "score_kind": "sequence_log_probability_including_eos",
+        "candidate_token_ids": [
+          [
+            110494,
+            117262,
+            248046
+          ],
+          [
+            100683,
+            102010,
+            248046
+          ]
+        ],
+        "prompt_sha256": "91f99414777ef785c5111d1c3e5e0b7fe351a0a9ea9b022000865598444c6588"
+      },
+      "label": {
+        "type": "noul",
+        "probabilities": {
+          "true": 0.9886163745084598,
+          "false": 0.011383625491540199
+        },
+        "noul": 0.9886163745084598,
+        "scoring": "label",
+        "candidate_scores": [
+          23.691696166992188,
+          19.22756576538086
+        ],
+        "score_kind": "candidate_logit",
+        "candidate_token_ids": [
+          [
+            32
+          ],
+          [
+            33
+          ]
+        ],
+        "prompt_sha256": "484fdeab63fdd87ef77a0e2a196e010c36d7d379a41ab700c99eb0cdc3bef939"
+      }
+    },
+    "probability_semantics": "normalized candidate probability conditional on supplied candidates; not calibrated",
+    "metrics": {
+      "preprocessing_ms": 9.279582998715341,
+      "vision_ms": 271.44679200137034,
+      "prefill_ms": 257.76591699104756,
+      "scoring_ms": 406.2965412158519,
+      "cache_fork_ms": 0.44604099821299314,
+      "language_forward_calls": 3,
+      "vision_forward_calls": 1,
+      "mode": "shared",
+      "elapsed_ms": 993.4825000236742,
+      "image_and_prompt_ms": 44.50979200191796,
+      "suffix_ms": 406.2965412158519,
+      "prefix_tokens": 504,
+      "question_input_tokens": [
+        545,
+        558,
+        552,
+        551
+      ],
+      "generated_tokens": 0,
+      "peak_metal_memory_gb": 1.766618104,
+      "decisions_per_second": 4.02624102579027
+    }
+  },
+  "direct": {
+    "model": "mlx-community/Qwen3.5-0.8B-4bit",
+    "revision": null,
+    "model_source": ".models/Qwen3.5-0.8B-4bit",
+    "answers": {
+      "native": {
+        "type": "choice",
+        "probabilities": {
+          "dog": 0.97453878032043,
+          "cat": 0.02546121967957003
+        },
+        "concentration": 0.8289075948967457,
+        "choice": "dog",
+        "scoring": "single_token",
+        "candidate_scores": [
+          19.549287796020508,
+          15.90447998046875
+        ],
+        "score_kind": "candidate_logit",
+        "candidate_token_ids": [
+          [
+            17907
+          ],
+          [
+            4466
+          ]
+        ],
+        "prompt_sha256": "47e2eb35039f616bbb98c7aa09262df8a4eb744bbcfa4553d8d750edd8ea50bc"
+      },
+      "phrase": {
+        "type": "choice",
+        "probabilities": {
+          "short": 0.007437659335734296,
+          "dog": 0.8316036374042097,
+          "cat": 0.16095870326005599
+        },
+        "concentration": 0.5596180838648195,
+        "choice": "dog",
+        "scoring": "sequence",
+        "candidate_scores": [
+          -6.8880205154418945,
+          -2.1712207794189453,
+          -3.8134288787841797
+        ],
+        "score_kind": "sequence_log_probability_including_eos",
+        "candidate_token_ids": [
+          [
+            5603,
+            248046
+          ],
+          [
+            5603,
+            5388,
+            248046
+          ],
+          [
+            5603,
+            7993,
+            248046
+          ]
+        ],
+        "prompt_sha256": "6187643c88982c4e5057f9ccfa1c275758278bffc195dbc6734d3b33f99cce4b"
+      },
+      "chinese": {
+        "type": "choice",
+        "probabilities": {
+          "out": 0.9992360476694492,
+          "in": 0.0007639523305508349
+        },
+        "concentration": 0.9909881329070696,
+        "choice": "out",
+        "scoring": "sequence",
+        "candidate_scores": [
+          -0.56512451171875,
+          -7.741365432739258
+        ],
+        "score_kind": "sequence_log_probability_including_eos",
+        "candidate_token_ids": [
+          [
+            110494,
+            117262,
+            248046
+          ],
+          [
+            100683,
+            102010,
+            248046
+          ]
+        ],
+        "prompt_sha256": "91f99414777ef785c5111d1c3e5e0b7fe351a0a9ea9b022000865598444c6588"
+      },
+      "label": {
+        "type": "noul",
+        "probabilities": {
+          "true": 0.9886163745084598,
+          "false": 0.011383625491540199
+        },
+        "noul": 0.9886163745084598,
+        "scoring": "label",
+        "candidate_scores": [
+          23.691699981689453,
+          19.227569580078125
+        ],
+        "score_kind": "candidate_logit",
+        "candidate_token_ids": [
+          [
+            32
+          ],
+          [
+            33
+          ]
+        ],
+        "prompt_sha256": "484fdeab63fdd87ef77a0e2a196e010c36d7d379a41ab700c99eb0cdc3bef939"
+      }
+    },
+    "probability_semantics": "normalized candidate probability conditional on supplied candidates; not calibrated",
+    "metrics": {
+      "preprocessing_ms": 96.33450000546873,
+      "vision_ms": 1652.1744180936366,
+      "prefill_ms": 2074.9942520051263,
+      "scoring_ms": 56.37033295352012,
+      "cache_fork_ms": 0,
+      "language_forward_calls": 7,
+      "vision_forward_calls": 7,
+      "mode": "independent",
+      "elapsed_ms": 3909.981958044227,
+      "image_and_prompt_ms": 22.033500019460917,
+      "suffix_ms": 56.37033295352012,
+      "prefix_tokens": null,
+      "question_input_tokens": [
+        545,
+        558,
+        552,
+        551
+      ],
+      "generated_tokens": 0,
+      "peak_metal_memory_gb": 2.345999871,
+      "decisions_per_second": 1.0230226233577813
+    }
+  },
+  "full_forward_oracle_scores": {
+    "native": [
+      19.549287796020508,
+      15.904474258422852
+    ],
+    "phrase": [
+      -6.888030015816554,
+      -2.1712215105834574,
+      -3.8134226083239504
+    ],
+    "chinese": [
+      -0.565134349275219,
+      -7.741366154413878
+    ],
+    "label": [
+      23.69170379638672,
+      19.227561950683594
+    ]
+  },
+  "max_oracle_score_error": 3.906427846800398e-05,
+  "max_probability_delta": 1.75009471181653e-06
+}

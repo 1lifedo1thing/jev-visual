@@ -1,0 +1,43 @@
+{
+  "image": "red-circle.png",
+  "questions": {
+    "color": {
+      "type": "choice",
+      "instructions": "What color is the large shape?",
+      "criteria": {
+        "red": "Red",
+        "blue": "Blue",
+        "green": "Green"
+      }
+    },
+    "shape": {
+      "type": "choice",
+      "instructions": "What shape is shown?",
+      "criteria": {
+        "circle": "A circle",
+        "square": "A square"
+      }
+    },
+    "is_red": {
+      "type": "noul",
+      "instructions": "Is the large shape red?"
+    },
+    "redness": {
+      "type": "score",
+      "instructions": "How much of the large shape is red?",
+      "criteria": [
+        "None of it is red",
+        "Some of it is red",
+        "All of it is red"
+      ]
+    },
+    "long_question": {
+      "type": "choice",
+      "instructions": "Inspect the outer boundary of the single large colored object in the center of the white image. Is the boundary round, or does it consist of four straight sides and four corners?",
+      "criteria": {
+        "round": "Round boundary",
+        "corners": "Four straight sides and four corners"
+      }
+    }
+  }
+}

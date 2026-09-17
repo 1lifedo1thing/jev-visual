@@ -1,0 +1,16 @@
+{
+  "image": "dog.jpg",
+  "questions": {
+    "animal": {
+      "type": "choice",
+      "instructions": "Which animal is the main subject of the photo?",
+      "criteria": {"cat": "A cat", "dog": "A dog", "bird": "A bird", "other": "Another animal or no animal"}
+    },
+    "white_fur": {"type": "noul", "instructions": "Does the animal have mostly white fur?"},
+    "setting": {
+      "type": "choice",
+      "instructions": "Is the animal photographed indoors or outdoors?",
+      "criteria": {"indoors": "Inside a building", "outdoors": "Outside in an outdoor environment", "unknown": "Cannot tell from the photo"}
+    }
+  }
+}
