@@ -2,10 +2,10 @@
 import json
 from pathlib import Path
 
-from visual_jev.engine import Engine
-from visual_jev.preprocessing import build_prompts, read_image
-from visual_jev.schema import Request
-from visual_jev.scoring import sequence_logprob
+from jev_visual.engine import Engine
+from jev_visual.preprocessing import build_prompts, read_image
+from jev_visual.schema import Request
+from jev_visual.scoring import sequence_logprob
 
 
 def main():

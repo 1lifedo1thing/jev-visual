@@ -2,7 +2,7 @@
 
 Requires an Apple Silicon Mac with Metal access. From the repository root, follow
 the [main quick start](../README.md) to install the locked environment and run
-`visual-jev-download`. This places the pinned model in `.models/Qwen3.5-0.8B-4bit`.
+`jev-visual-download`. This places the pinned model in `.models/Qwen3.5-0.8B-4bit`.
 Stop the local server and other inference jobs before measuring.
 
 ```bash

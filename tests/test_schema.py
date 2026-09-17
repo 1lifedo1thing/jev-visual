@@ -1,7 +1,7 @@
 import math
 import pytest
 from pydantic import ValidationError
-from visual_jev.schema import Question, Request, answer
+from jev_visual.schema import Question, Request, answer
 
 
 def test_typed_decisions_and_probability_semantics():

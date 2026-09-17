@@ -1,6 +1,6 @@
 # Reviewed sources and licenses
 
-Source review date: 2026-09-17. Changes extend the existing Visual Jev implementation;
+Source review date: 2026-09-17. Changes extend the existing Jev Visual implementation;
 the upstream serving engines were not copied wholesale.
 
 | Source | Reviewed revision | License evidence |

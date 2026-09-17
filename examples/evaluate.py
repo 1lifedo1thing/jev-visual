@@ -6,8 +6,8 @@ from pathlib import Path
 
 from PIL import Image, ImageDraw
 
-from visual_jev.engine import Engine
-from visual_jev.schema import Request
+from jev_visual.engine import Engine
+from jev_visual.schema import Request
 
 
 def fixtures():

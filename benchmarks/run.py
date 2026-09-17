@@ -9,9 +9,9 @@ from importlib.metadata import version
 from pathlib import Path
 from unittest.mock import patch
 
-from visual_jev.engine import Engine
-from visual_jev.preprocessing import read_image
-from visual_jev.schema import Request
+from jev_visual.engine import Engine
+from jev_visual.preprocessing import read_image
+from jev_visual.schema import Request
 
 
 CRITERIA = [

@@ -3,8 +3,8 @@ import numpy as np
 import pytest
 from pydantic import ValidationError
 
-from visual_jev.schema import Question, Request
-from visual_jev.scoring import Plan, candidate_tokens, sequence_logprob, tasks_for
+from jev_visual.schema import Question, Request
+from jev_visual.scoring import Plan, candidate_tokens, sequence_logprob, tasks_for
 
 
 class Tokenizer:

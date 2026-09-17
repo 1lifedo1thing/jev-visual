@@ -6,8 +6,8 @@ import pytest
 from fastapi.testclient import TestClient
 from PIL import Image
 
-from visual_jev.engine import read_image
-from visual_jev.server import app
+from jev_visual.engine import read_image
+from jev_visual.server import app
 
 
 def image_url():

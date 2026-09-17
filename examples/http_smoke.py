@@ -13,7 +13,7 @@ request = json.loads((root / "request.json").read_text())
 request["image"] = "data:image/png;base64," + base64.b64encode((root / request["image"]).read_bytes()).decode()
 with httpx.Client(base_url="http://127.0.0.1:8788", timeout=120, trust_env=False) as client:
     assert client.get("/health").json()["ready"]
-    assert "Visual Jev" in client.get("/").text
+    assert "Jev Visual" in client.get("/").text
     response = client.post("/v1/judge", json=request)
     response.raise_for_status()
     result = response.json()

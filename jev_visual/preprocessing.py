@@ -27,7 +27,7 @@ def read_image(source: str, *, allow_path=True):
 def build_prompts(processor, request):
     from .scoring import Plan, candidate_tokens, digest
     import string
-    marker = "VISUAL_JEV_QUESTION_INSERTION_81c42"
+    marker = "JEV_VISUAL_QUESTION_INSERTION_81c42"
     state = json.dumps(request.state, ensure_ascii=False, allow_nan=False)
     if marker in state or len(state) > 16000:
         raise ValueError("reserved prompt marker or state over 16000 characters")
