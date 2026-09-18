@@ -10,15 +10,32 @@
 
 ## 视觉游戏 Demo
 
-### AI 分拣工厂
+<table>
+  <tr>
+    <th width="33%">AI 分拣工厂</th>
+    <th width="33%">打砖块</th>
+    <th width="33%">摄像头手势</th>
+  </tr>
+  <tr>
+    <td valign="top">
+      <video src="https://github.com/user-attachments/assets/c87c09d8-30d2-4392-b981-d0b5cf1879ae" controls width="100%"></video>
+      <p>识别传送带上的物品，选择分拣通道。</p>
+      <a href="https://github.com/user-attachments/assets/c87c09d8-30d2-4392-b981-d0b5cf1879ae">观看视频</a>
+    </td>
+    <td valign="top">
+      <video src="https://github.com/user-attachments/assets/a642a6d6-c138-4c02-8378-f2981be22aad" controls width="100%"></video>
+      <p>判断小球所在的五分区，控制挡板。</p>
+      <a href="https://github.com/user-attachments/assets/a642a6d6-c138-4c02-8378-f2981be22aad">观看视频</a>
+    </td>
+    <td valign="top">
+      <video src="https://github.com/user-attachments/assets/b0042194-54f0-4fc4-9534-e31ec001aad8" controls width="100%"></video>
+      <p>识别摄像头中的手势，即时切换粒子特效。</p>
+      <a href="https://github.com/user-attachments/assets/b0042194-54f0-4fc4-9534-e31ec001aad8">观看视频</a>
+    </td>
+  </tr>
+</table>
 
-https://github.com/user-attachments/assets/c87c09d8-30d2-4392-b981-d0b5cf1879ae
-
-分拣工厂让模型识别传送带上物品的截图，选择分拣通道；右侧展示真实输入和候选概率。
-
-### 打砖块
-
-https://github.com/user-attachments/assets/a642a6d6-c138-4c02-8378-f2981be22aad
+### 打砖块的简化方案
 
 **打砖块暴露了 Qwen3.5-0.8B-4bit 在当前非思考、直接打分模式下的能力不足。** 直接要求追球或选择左／右并不可靠：模型可能连续选择同一方向，把挡板推到边界。最终采用的方案是降低任务难度：
 

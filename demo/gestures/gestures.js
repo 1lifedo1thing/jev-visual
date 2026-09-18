@@ -1,5 +1,4 @@
 import { VisualClient, trace } from "../live.js";
-import { GestureStability } from "./stability.mjs";
 const $ = (id) => document.getElementById(id),
   video = $("camera"),
   canvas = $("particles"),
@@ -7,8 +6,7 @@ const $ = (id) => document.getElementById(id),
 const capture = document.createElement("canvas");
 capture.width = capture.height = 256;
 const cameraCtx = capture.getContext("2d");
-const client = new VisualClient(),
-  stable = new GestureStability();
+const client = new VisualClient();
 const labels = {
   palm: "Open palm",
   fist: "Fist",
@@ -107,7 +105,6 @@ function closeCamera() {
   stream = null;
   old?.getTracks().forEach((t) => t.stop());
   video.srcObject = null;
-  stable.reset();
   setMode("none");
   samples = 0;
   $("samples").textContent = "0";
@@ -125,7 +122,6 @@ function stopAI() {
   epoch++;
   clearTimeout(timer);
   client.cancel();
-  stable.reset();
   setMode("none");
   $("ai-on").textContent = "Start recognition";
   status("Recognition paused. Camera preview remains on; no new frames are sent.");
@@ -158,12 +154,11 @@ async function recognize(token) {
     $("latency").textContent =
       `${Math.round(result.wallMs)} / ${Math.round(result.output.metrics?.elapsed_ms || 0)} ms`;
     if (result.wallMs <= 2500) {
-      setMode(stable.update(result.answer.probabilities));
+      setMode(result.answer.choice);
       status(
-        `Model: ${labels[result.answer.choice]} · Stable mode: ${labels[mode]}. Hold your gesture to confirm.`,
+        `Model: ${labels[result.answer.choice]} · Effect: ${labels[mode]}. Applied immediately.`,
       );
     } else {
-      stable.reset();
       setMode("none");
       status("Response exceeded 2.5 seconds. Control result discarded; idle restored. Sampling a fresh frame.");
     }
@@ -172,7 +167,7 @@ async function recognize(token) {
       result,
       labels,
       result.wallMs <= 2500
-        ? `Stable mode: ${labels[mode]} · Confirmed twice`
+        ? `Effect: ${labels[mode]}`
         : "Stale response: not used for control",
     );
   } catch (error) {
@@ -182,7 +177,7 @@ async function recognize(token) {
     return;
   }
   if (active && token === epoch)
-    timer = setTimeout(() => recognize(token), 150);
+    timer = setTimeout(() => recognize(token), 50);
 }
 $("camera-on").onclick = openCamera;
 $("camera-off").onclick = closeCamera;
@@ -210,7 +205,7 @@ function frame(now) {
   glow.addColorStop(1, "rgba(10,17,30,0)");
   ctx.fillStyle = glow;
   ctx.fillRect(0, 0, 960, 570);
-  const ease = 1 - Math.exp(-dt * 4.5);
+  const ease = 1; // Apply the recognized shape on the next animation frame.
   for (let i = 0; i < points.length; i++) {
     const p = points[i];
     let x,
@@ -256,7 +251,6 @@ function frame(now) {
 }
 document.addEventListener("visibilitychange", () => {
   if (document.hidden) {
-    stable.reset();
     setMode("none");
   }
 });

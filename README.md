@@ -10,15 +10,32 @@ A small, runnable project for learning **vision-language model inference on Appl
 
 ## Visual game demos
 
-### AI sorting factory
+<table>
+  <tr>
+    <th width="33%">AI sorting factory</th>
+    <th width="33%">Breakout</th>
+    <th width="33%">Camera gestures</th>
+  </tr>
+  <tr>
+    <td valign="top">
+      <video src="https://github.com/user-attachments/assets/c87c09d8-30d2-4392-b981-d0b5cf1879ae" controls width="100%"></video>
+      <p>Classify conveyor objects and choose a sorting lane.</p>
+      <a href="https://github.com/user-attachments/assets/c87c09d8-30d2-4392-b981-d0b5cf1879ae">Watch video</a>
+    </td>
+    <td valign="top">
+      <video src="https://github.com/user-attachments/assets/a642a6d6-c138-4c02-8378-f2981be22aad" controls width="100%"></video>
+      <p>Locate the ball in five regions to control the paddle.</p>
+      <a href="https://github.com/user-attachments/assets/a642a6d6-c138-4c02-8378-f2981be22aad">Watch video</a>
+    </td>
+    <td valign="top">
+      <video src="https://github.com/user-attachments/assets/b0042194-54f0-4fc4-9534-e31ec001aad8" controls width="100%"></video>
+      <p>Recognize hand gestures from camera frames to control particles.</p>
+      <a href="https://github.com/user-attachments/assets/b0042194-54f0-4fc4-9534-e31ec001aad8">Watch video</a>
+    </td>
+  </tr>
+</table>
 
-https://github.com/user-attachments/assets/c87c09d8-30d2-4392-b981-d0b5cf1879ae
-
-The factory classifies screenshots of objects on a moving conveyor and selects a sorting lane. The sidebar shows the actual input and candidate probabilities.
-
-### Breakout
-
-https://github.com/user-attachments/assets/a642a6d6-c138-4c02-8378-f2981be22aad
+### How Breakout is simplified
 
 **Breakout exposes the limits of Qwen3.5-0.8B-4bit in our non-thinking, direct-scoring setup.** Asking it to follow the ball or choose Left/Right was unreliable: repeated choices could pin the paddle against an edge. The working approach simplifies the task:
 

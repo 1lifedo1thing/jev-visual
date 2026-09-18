@@ -178,7 +178,7 @@ try {
     {},
     { timeout: 15000 },
   );
-  assert.ok(cameraRequests >= 2);
+  assert.ok(cameraRequests >= 1);
   assert.ok(
     (await page.evaluate(() => window.gestureDebug.state.frameCount)) > 10,
   );

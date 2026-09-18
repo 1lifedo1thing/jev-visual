@@ -9,15 +9,14 @@ Open <http://127.0.0.1:8788/demo/gestures/> with the local Jev Visual server run
 
 The preview is mirrored for comfortable interaction. A **256×256 unmirrored center-square crop** is sent to the local `/v1/judge` endpoint with fixed gesture candidates. No coordinates, landmarks or hidden hand detector are supplied. The default Qwen3.5-0.8B adapter classifies screenshots; this is not a high-rate hand-tracking library.
 
-The 1,000-particle animation runs independently through `requestAnimationFrame`. Only one inference may be in flight. After a response, the next latest frame is sampled after 150 ms; old camera frames are never queued. Candidate probabilities are smoothed (65% new / 35% previous); a score of at least 0.45 and two consecutive matching classifications are required to switch effects. This is a UI stabilization heuristic, **not calibration**. Responses older than 2.5 seconds do not control the particles.
+The 1,000-particle animation runs independently through `requestAnimationFrame`. Only one inference may be in flight. After a response, the next latest frame is sampled after 50 ms; old camera frames are never queued. This is a 50 ms pause between requests, not a guaranteed 20 FPS inference rate. Every fresh model choice is applied immediately, without probability smoothing, confirmation counts or particle-position easing. Responses older than 2.5 seconds do not control the particles.
 
 Camera access requires localhost or HTTPS and may also require macOS browser-camera permission. Audio is never requested. Frames are sent only after starting recognition, to this local server; the app does not persist them to disk or upload them to cloud services. Up to 12 frames exist in the live page history until closing the camera. Do not expose the unauthenticated local server publicly.
 
 ## Validation boundary
 
-Browser tests use Chromium's synthetic video device and mocked model responses to check opt-in acquisition, no inference during preview, two-result stabilization, animation continuing, mobile layout, permission denial, cancellation, track shutdown and history cleanup. They **do not validate the recognition accuracy of your real hand**. Real-camera behavior depends on lighting, framing and the small model's recognition capability.
+Browser tests use Chromium's synthetic video device and mocked model responses to check opt-in acquisition, no inference during preview, immediate prediction-driven effects, animation continuing, mobile layout, permission denial, cancellation, track shutdown and history cleanup. They **do not validate the recognition accuracy of your real hand**. Real-camera behavior depends on lighting, framing and the small model's recognition capability.
 
 ```bash
-node --test demo/gestures/stability.test.mjs
 BROWSER_CHANNEL=chrome npm --prefix demo run test:live
 ```

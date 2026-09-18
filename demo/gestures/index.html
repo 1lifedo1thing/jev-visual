@@ -148,7 +148,7 @@
               <video id="camera" autoplay muted playsinline></video>
             </div>
             <p>
-              Keep one hand inside the center frame for about a second. The preview is mirrored; the model receives an unmirrored square crop. Use a simple background and good lighting.
+              Keep one hand inside the center frame. The preview is mirrored; the model receives an unmirrored square crop. Use a simple background and good lighting.
             </p>
           </div>
           <div class="live-controls">
@@ -167,13 +167,13 @@
           <p class="note">
             Video only; no audio. Frames are sent only after you start recognition, to
             <strong>local /v1/judge</strong
-            >. No cloud upload or disk storage. The page retains up to 12 frames and clears them when the camera closes. Effects use smoothed probabilities and two consecutive confirmations. This is not hand landmark tracking; recognition may fail.
+            >. No cloud upload or disk storage. The page retains up to 12 frames and clears them when the camera closes. Every fresh prediction changes the effect immediately, without smoothing or confirmation. This is not hand landmark tracking; recognition may fail.
           </p>
         </section>
         <aside class="live-aside">
           <h2>Visual feedback feed</h2>
           <p>
-            Actual input frames and raw candidate probabilities appear below. Particle effects use stabilized predictions; probabilities are not accuracy scores. Responses older than 2.5 seconds are ignored for control.
+            Actual input frames and raw candidate probabilities appear below. Particle effects follow the latest prediction; probabilities are not accuracy scores. Responses older than 2.5 seconds are ignored for control.
           </p>
           <div id="feed"></div>
         </aside>

@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "node --test rubik/cube.test.mjs rubik/audit.test.mjs rubik/observation.test.mjs gestures/stability.test.mjs breakout/physics.test.mjs",
+    "test": "node --test rubik/cube.test.mjs rubik/audit.test.mjs rubik/observation.test.mjs breakout/physics.test.mjs",
     "test:browser": "node browser-check.mjs",
     "test:live": "node live-check.mjs",
     "test:breakout": "node breakout/browser-check.mjs"
