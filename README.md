@@ -115,3 +115,13 @@ The recorded M4 / 16GB run took **37.30s → 2.40s** for independent versus shar
 Original code: [MIT](LICENSE). Third-party licenses: [notices](THIRD_PARTY.md).
 
 **Credit to [OpenJev](https://github.com/TheoLeeCJ/openjev) and [harshatheg/Qwen-2.5-1B-RLCD](https://huggingface.co/harshatheg/Qwen-2.5-1B-RLCD)** for the candidate-scoring and shared-context ideas. [Detailed credits and licenses](THIRD_PARTY.md).
+
+## Star History
+
+<a href="https://www.star-history.com/?repos=hr98w%2Fjev-visual&type=date&legend=bottom-right">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=hr98w/jev-visual&type=date&theme=dark&legend=bottom-right" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=hr98w/jev-visual&type=date&legend=bottom-right" />
+   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=hr98w/jev-visual&type=date&legend=bottom-right" />
+ </picture>
+</a>
